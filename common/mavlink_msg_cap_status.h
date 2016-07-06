@@ -2,8 +2,8 @@
 
 #define MAVLINK_MSG_ID_CAP_STATUS 180
 
-typedef struct MAVLINK_PACKED __mavlink_cap_status_t
-{
+MAVPACKED(
+typedef struct __mavlink_cap_status_t {
  uint16_t number_of_photos; /*< Number of photos taken in a mission*/
  uint16_t air_time; /*< Time since take-off*/
  uint8_t parachute_status; /*< Prachute status*/
@@ -13,7 +13,7 @@ typedef struct MAVLINK_PACKED __mavlink_cap_status_t
  uint8_t altitude_override_status; /*< Altitude override status*/
  uint8_t speed_override_status; /*< Speed override status*/
  uint8_t failsafe_status; /*< Failsafe status*/
-} mavlink_cap_status_t;
+}) mavlink_cap_status_t;
 
 #define MAVLINK_MSG_ID_CAP_STATUS_LEN 11
 #define MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN 11
