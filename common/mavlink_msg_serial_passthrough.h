@@ -7,20 +7,20 @@ typedef struct __mavlink_serial_passthrough_t {
  uint8_t target_system; /*< System which should execute the command*/
  uint8_t target_component; /*< Component which should execute the command, 0 for all components*/
  uint8_t confirmation; /*< 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)*/
- uint8_t data[250]; /*< Data*/
+ uint8_t data[128]; /*< Data*/
  uint8_t size; /*< Data size*/
  uint8_t number; /*< Message number used for acknowledge*/
 }) mavlink_serial_passthrough_t;
 
-#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN 255
-#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN 255
-#define MAVLINK_MSG_ID_181_LEN 255
-#define MAVLINK_MSG_ID_181_MIN_LEN 255
+#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN 133
+#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN 133
+#define MAVLINK_MSG_ID_181_LEN 133
+#define MAVLINK_MSG_ID_181_MIN_LEN 133
 
-#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC 162
-#define MAVLINK_MSG_ID_181_CRC 162
+#define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC 9
+#define MAVLINK_MSG_ID_181_CRC 9
 
-#define MAVLINK_MSG_SERIAL_PASSTHROUGH_FIELD_DATA_LEN 250
+#define MAVLINK_MSG_SERIAL_PASSTHROUGH_FIELD_DATA_LEN 128
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_SERIAL_PASSTHROUGH { \
@@ -30,9 +30,9 @@ typedef struct __mavlink_serial_passthrough_t {
 	{  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 0, offsetof(mavlink_serial_passthrough_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 1, offsetof(mavlink_serial_passthrough_t, target_component) }, \
          { "confirmation", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_serial_passthrough_t, confirmation) }, \
-         { "data", NULL, MAVLINK_TYPE_UINT8_T, 250, 3, offsetof(mavlink_serial_passthrough_t, data) }, \
-         { "size", NULL, MAVLINK_TYPE_UINT8_T, 0, 253, offsetof(mavlink_serial_passthrough_t, size) }, \
-         { "number", NULL, MAVLINK_TYPE_UINT8_T, 0, 254, offsetof(mavlink_serial_passthrough_t, number) }, \
+         { "data", NULL, MAVLINK_TYPE_UINT8_T, 128, 3, offsetof(mavlink_serial_passthrough_t, data) }, \
+         { "size", NULL, MAVLINK_TYPE_UINT8_T, 0, 131, offsetof(mavlink_serial_passthrough_t, size) }, \
+         { "number", NULL, MAVLINK_TYPE_UINT8_T, 0, 132, offsetof(mavlink_serial_passthrough_t, number) }, \
          } \
 }
 #else
@@ -42,9 +42,9 @@ typedef struct __mavlink_serial_passthrough_t {
 	{  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 0, offsetof(mavlink_serial_passthrough_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 1, offsetof(mavlink_serial_passthrough_t, target_component) }, \
          { "confirmation", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_serial_passthrough_t, confirmation) }, \
-         { "data", NULL, MAVLINK_TYPE_UINT8_T, 250, 3, offsetof(mavlink_serial_passthrough_t, data) }, \
-         { "size", NULL, MAVLINK_TYPE_UINT8_T, 0, 253, offsetof(mavlink_serial_passthrough_t, size) }, \
-         { "number", NULL, MAVLINK_TYPE_UINT8_T, 0, 254, offsetof(mavlink_serial_passthrough_t, number) }, \
+         { "data", NULL, MAVLINK_TYPE_UINT8_T, 128, 3, offsetof(mavlink_serial_passthrough_t, data) }, \
+         { "size", NULL, MAVLINK_TYPE_UINT8_T, 0, 131, offsetof(mavlink_serial_passthrough_t, size) }, \
+         { "number", NULL, MAVLINK_TYPE_UINT8_T, 0, 132, offsetof(mavlink_serial_passthrough_t, number) }, \
          } \
 }
 #endif
@@ -71,9 +71,9 @@ static inline uint16_t mavlink_msg_serial_passthrough_pack(uint8_t system_id, ui
 	_mav_put_uint8_t(buf, 0, target_system);
 	_mav_put_uint8_t(buf, 1, target_component);
 	_mav_put_uint8_t(buf, 2, confirmation);
-	_mav_put_uint8_t(buf, 253, size);
-	_mav_put_uint8_t(buf, 254, number);
-	_mav_put_uint8_t_array(buf, 3, data, 250);
+	_mav_put_uint8_t(buf, 131, size);
+	_mav_put_uint8_t(buf, 132, number);
+	_mav_put_uint8_t_array(buf, 3, data, 128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN);
 #else
 	mavlink_serial_passthrough_t packet;
@@ -82,7 +82,7 @@ static inline uint16_t mavlink_msg_serial_passthrough_pack(uint8_t system_id, ui
 	packet.confirmation = confirmation;
 	packet.size = size;
 	packet.number = number;
-	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*250);
+	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN);
 #endif
 
@@ -113,9 +113,9 @@ static inline uint16_t mavlink_msg_serial_passthrough_pack_chan(uint8_t system_i
 	_mav_put_uint8_t(buf, 0, target_system);
 	_mav_put_uint8_t(buf, 1, target_component);
 	_mav_put_uint8_t(buf, 2, confirmation);
-	_mav_put_uint8_t(buf, 253, size);
-	_mav_put_uint8_t(buf, 254, number);
-	_mav_put_uint8_t_array(buf, 3, data, 250);
+	_mav_put_uint8_t(buf, 131, size);
+	_mav_put_uint8_t(buf, 132, number);
+	_mav_put_uint8_t_array(buf, 3, data, 128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN);
 #else
 	mavlink_serial_passthrough_t packet;
@@ -124,7 +124,7 @@ static inline uint16_t mavlink_msg_serial_passthrough_pack_chan(uint8_t system_i
 	packet.confirmation = confirmation;
 	packet.size = size;
 	packet.number = number;
-	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*250);
+	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*128);
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN);
 #endif
 
@@ -179,9 +179,9 @@ static inline void mavlink_msg_serial_passthrough_send(mavlink_channel_t chan, u
 	_mav_put_uint8_t(buf, 0, target_system);
 	_mav_put_uint8_t(buf, 1, target_component);
 	_mav_put_uint8_t(buf, 2, confirmation);
-	_mav_put_uint8_t(buf, 253, size);
-	_mav_put_uint8_t(buf, 254, number);
-	_mav_put_uint8_t_array(buf, 3, data, 250);
+	_mav_put_uint8_t(buf, 131, size);
+	_mav_put_uint8_t(buf, 132, number);
+	_mav_put_uint8_t_array(buf, 3, data, 128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH, buf, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC);
 #else
 	mavlink_serial_passthrough_t packet;
@@ -190,7 +190,7 @@ static inline void mavlink_msg_serial_passthrough_send(mavlink_channel_t chan, u
 	packet.confirmation = confirmation;
 	packet.size = size;
 	packet.number = number;
-	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*250);
+	mav_array_memcpy(packet.data, data, sizeof(uint8_t)*128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH, (const char *)&packet, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC);
 #endif
 }
@@ -224,9 +224,9 @@ static inline void mavlink_msg_serial_passthrough_send_buf(mavlink_message_t *ms
 	_mav_put_uint8_t(buf, 0, target_system);
 	_mav_put_uint8_t(buf, 1, target_component);
 	_mav_put_uint8_t(buf, 2, confirmation);
-	_mav_put_uint8_t(buf, 253, size);
-	_mav_put_uint8_t(buf, 254, number);
-	_mav_put_uint8_t_array(buf, 3, data, 250);
+	_mav_put_uint8_t(buf, 131, size);
+	_mav_put_uint8_t(buf, 132, number);
+	_mav_put_uint8_t_array(buf, 3, data, 128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH, buf, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC);
 #else
 	mavlink_serial_passthrough_t *packet = (mavlink_serial_passthrough_t *)msgbuf;
@@ -235,7 +235,7 @@ static inline void mavlink_msg_serial_passthrough_send_buf(mavlink_message_t *ms
 	packet->confirmation = confirmation;
 	packet->size = size;
 	packet->number = number;
-	mav_array_memcpy(packet->data, data, sizeof(uint8_t)*250);
+	mav_array_memcpy(packet->data, data, sizeof(uint8_t)*128);
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH, (const char *)packet, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_MIN_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN, MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_CRC);
 #endif
 }
@@ -283,7 +283,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_confirmation(const mavl
  */
 static inline uint16_t mavlink_msg_serial_passthrough_get_data(const mavlink_message_t* msg, uint8_t *data)
 {
-	return _MAV_RETURN_uint8_t_array(msg, data, 250,  3);
+	return _MAV_RETURN_uint8_t_array(msg, data, 128,  3);
 }
 
 /**
@@ -293,7 +293,7 @@ static inline uint16_t mavlink_msg_serial_passthrough_get_data(const mavlink_mes
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_size(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  253);
+	return _MAV_RETURN_uint8_t(msg,  131);
 }
 
 /**
@@ -303,7 +303,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_size(const mavlink_mess
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_number(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  254);
+	return _MAV_RETURN_uint8_t(msg,  132);
 }
 
 /**
