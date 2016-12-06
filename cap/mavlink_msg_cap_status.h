@@ -1,3 +1,4 @@
+#pragma once
 // MESSAGE CAP_STATUS PACKING
 
 #define MAVLINK_MSG_ID_CAP_STATUS 180
@@ -27,10 +28,10 @@ typedef struct __mavlink_cap_status_t {
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_CAP_STATUS { \
-	180, \
-	"CAP_STATUS", \
-	9, \
-	{  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 0, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+    180, \
+    "CAP_STATUS", \
+    9, \
+    {  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 0, offsetof(mavlink_cap_status_t, number_of_photos) }, \
          { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 2, offsetof(mavlink_cap_status_t, air_time) }, \
          { "parachute_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_cap_status_t, parachute_status) }, \
          { "airspeed_cal_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 5, offsetof(mavlink_cap_status_t, airspeed_cal_status) }, \
@@ -43,9 +44,9 @@ typedef struct __mavlink_cap_status_t {
 }
 #else
 #define MAVLINK_MESSAGE_INFO_CAP_STATUS { \
-	"CAP_STATUS", \
-	9, \
-	{  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 0, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+    "CAP_STATUS", \
+    9, \
+    {  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 0, offsetof(mavlink_cap_status_t, number_of_photos) }, \
          { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 2, offsetof(mavlink_cap_status_t, air_time) }, \
          { "parachute_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_cap_status_t, parachute_status) }, \
          { "airspeed_cal_status", NULL, MAVLINK_TYPE_UINT8_T, 0, 5, offsetof(mavlink_cap_status_t, airspeed_cal_status) }, \
@@ -76,37 +77,37 @@ typedef struct __mavlink_cap_status_t {
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-						       uint8_t parachute_status, uint8_t airspeed_cal_status, uint8_t home_init_status, uint8_t land_detected_status, uint8_t altitude_override_status, uint8_t speed_override_status, uint16_t number_of_photos, uint8_t failsafe_status, uint16_t air_time)
+                               uint8_t parachute_status, uint8_t airspeed_cal_status, uint8_t home_init_status, uint8_t land_detected_status, uint8_t altitude_override_status, uint8_t speed_override_status, uint16_t number_of_photos, uint8_t failsafe_status, uint16_t air_time)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
-	_mav_put_uint16_t(buf, 0, number_of_photos);
-	_mav_put_uint16_t(buf, 2, air_time);
-	_mav_put_uint8_t(buf, 4, parachute_status);
-	_mav_put_uint8_t(buf, 5, airspeed_cal_status);
-	_mav_put_uint8_t(buf, 6, home_init_status);
-	_mav_put_uint8_t(buf, 7, land_detected_status);
-	_mav_put_uint8_t(buf, 8, altitude_override_status);
-	_mav_put_uint8_t(buf, 9, speed_override_status);
-	_mav_put_uint8_t(buf, 10, failsafe_status);
+    char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
+    _mav_put_uint16_t(buf, 0, number_of_photos);
+    _mav_put_uint16_t(buf, 2, air_time);
+    _mav_put_uint8_t(buf, 4, parachute_status);
+    _mav_put_uint8_t(buf, 5, airspeed_cal_status);
+    _mav_put_uint8_t(buf, 6, home_init_status);
+    _mav_put_uint8_t(buf, 7, land_detected_status);
+    _mav_put_uint8_t(buf, 8, altitude_override_status);
+    _mav_put_uint8_t(buf, 9, speed_override_status);
+    _mav_put_uint8_t(buf, 10, failsafe_status);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #else
-	mavlink_cap_status_t packet;
-	packet.number_of_photos = number_of_photos;
-	packet.air_time = air_time;
-	packet.parachute_status = parachute_status;
-	packet.airspeed_cal_status = airspeed_cal_status;
-	packet.home_init_status = home_init_status;
-	packet.land_detected_status = land_detected_status;
-	packet.altitude_override_status = altitude_override_status;
-	packet.speed_override_status = speed_override_status;
-	packet.failsafe_status = failsafe_status;
+    mavlink_cap_status_t packet;
+    packet.number_of_photos = number_of_photos;
+    packet.air_time = air_time;
+    packet.parachute_status = parachute_status;
+    packet.airspeed_cal_status = airspeed_cal_status;
+    packet.home_init_status = home_init_status;
+    packet.land_detected_status = land_detected_status;
+    packet.altitude_override_status = altitude_override_status;
+    packet.speed_override_status = speed_override_status;
+    packet.failsafe_status = failsafe_status;
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #endif
 
-	msg->msgid = MAVLINK_MSG_ID_CAP_STATUS;
+    msg->msgid = MAVLINK_MSG_ID_CAP_STATUS;
     return mavlink_finalize_message(msg, system_id, component_id, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 }
 
@@ -128,38 +129,38 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
-							   mavlink_message_t* msg,
-						           uint8_t parachute_status,uint8_t airspeed_cal_status,uint8_t home_init_status,uint8_t land_detected_status,uint8_t altitude_override_status,uint8_t speed_override_status,uint16_t number_of_photos,uint8_t failsafe_status,uint16_t air_time)
+                               mavlink_message_t* msg,
+                                   uint8_t parachute_status,uint8_t airspeed_cal_status,uint8_t home_init_status,uint8_t land_detected_status,uint8_t altitude_override_status,uint8_t speed_override_status,uint16_t number_of_photos,uint8_t failsafe_status,uint16_t air_time)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
-	_mav_put_uint16_t(buf, 0, number_of_photos);
-	_mav_put_uint16_t(buf, 2, air_time);
-	_mav_put_uint8_t(buf, 4, parachute_status);
-	_mav_put_uint8_t(buf, 5, airspeed_cal_status);
-	_mav_put_uint8_t(buf, 6, home_init_status);
-	_mav_put_uint8_t(buf, 7, land_detected_status);
-	_mav_put_uint8_t(buf, 8, altitude_override_status);
-	_mav_put_uint8_t(buf, 9, speed_override_status);
-	_mav_put_uint8_t(buf, 10, failsafe_status);
+    char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
+    _mav_put_uint16_t(buf, 0, number_of_photos);
+    _mav_put_uint16_t(buf, 2, air_time);
+    _mav_put_uint8_t(buf, 4, parachute_status);
+    _mav_put_uint8_t(buf, 5, airspeed_cal_status);
+    _mav_put_uint8_t(buf, 6, home_init_status);
+    _mav_put_uint8_t(buf, 7, land_detected_status);
+    _mav_put_uint8_t(buf, 8, altitude_override_status);
+    _mav_put_uint8_t(buf, 9, speed_override_status);
+    _mav_put_uint8_t(buf, 10, failsafe_status);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #else
-	mavlink_cap_status_t packet;
-	packet.number_of_photos = number_of_photos;
-	packet.air_time = air_time;
-	packet.parachute_status = parachute_status;
-	packet.airspeed_cal_status = airspeed_cal_status;
-	packet.home_init_status = home_init_status;
-	packet.land_detected_status = land_detected_status;
-	packet.altitude_override_status = altitude_override_status;
-	packet.speed_override_status = speed_override_status;
-	packet.failsafe_status = failsafe_status;
+    mavlink_cap_status_t packet;
+    packet.number_of_photos = number_of_photos;
+    packet.air_time = air_time;
+    packet.parachute_status = parachute_status;
+    packet.airspeed_cal_status = airspeed_cal_status;
+    packet.home_init_status = home_init_status;
+    packet.land_detected_status = land_detected_status;
+    packet.altitude_override_status = altitude_override_status;
+    packet.speed_override_status = speed_override_status;
+    packet.failsafe_status = failsafe_status;
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), &packet, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #endif
 
-	msg->msgid = MAVLINK_MSG_ID_CAP_STATUS;
+    msg->msgid = MAVLINK_MSG_ID_CAP_STATUS;
     return mavlink_finalize_message_chan(msg, system_id, component_id, chan, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 }
 
@@ -173,7 +174,7 @@ static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8
  */
 static inline uint16_t mavlink_msg_cap_status_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_cap_status_t* cap_status)
 {
-	return mavlink_msg_cap_status_pack(system_id, component_id, msg, cap_status->parachute_status, cap_status->airspeed_cal_status, cap_status->home_init_status, cap_status->land_detected_status, cap_status->altitude_override_status, cap_status->speed_override_status, cap_status->number_of_photos, cap_status->failsafe_status, cap_status->air_time);
+    return mavlink_msg_cap_status_pack(system_id, component_id, msg, cap_status->parachute_status, cap_status->airspeed_cal_status, cap_status->home_init_status, cap_status->land_detected_status, cap_status->altitude_override_status, cap_status->speed_override_status, cap_status->number_of_photos, cap_status->failsafe_status, cap_status->air_time);
 }
 
 /**
@@ -187,7 +188,7 @@ static inline uint16_t mavlink_msg_cap_status_encode(uint8_t system_id, uint8_t 
  */
 static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_cap_status_t* cap_status)
 {
-	return mavlink_msg_cap_status_pack_chan(system_id, component_id, chan, msg, cap_status->parachute_status, cap_status->airspeed_cal_status, cap_status->home_init_status, cap_status->land_detected_status, cap_status->altitude_override_status, cap_status->speed_override_status, cap_status->number_of_photos, cap_status->failsafe_status, cap_status->air_time);
+    return mavlink_msg_cap_status_pack_chan(system_id, component_id, chan, msg, cap_status->parachute_status, cap_status->airspeed_cal_status, cap_status->home_init_status, cap_status->land_detected_status, cap_status->altitude_override_status, cap_status->speed_override_status, cap_status->number_of_photos, cap_status->failsafe_status, cap_status->air_time);
 }
 
 /**
@@ -209,29 +210,29 @@ static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uin
 static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint8_t parachute_status, uint8_t airspeed_cal_status, uint8_t home_init_status, uint8_t land_detected_status, uint8_t altitude_override_status, uint8_t speed_override_status, uint16_t number_of_photos, uint8_t failsafe_status, uint16_t air_time)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
-	_mav_put_uint16_t(buf, 0, number_of_photos);
-	_mav_put_uint16_t(buf, 2, air_time);
-	_mav_put_uint8_t(buf, 4, parachute_status);
-	_mav_put_uint8_t(buf, 5, airspeed_cal_status);
-	_mav_put_uint8_t(buf, 6, home_init_status);
-	_mav_put_uint8_t(buf, 7, land_detected_status);
-	_mav_put_uint8_t(buf, 8, altitude_override_status);
-	_mav_put_uint8_t(buf, 9, speed_override_status);
-	_mav_put_uint8_t(buf, 10, failsafe_status);
+    char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
+    _mav_put_uint16_t(buf, 0, number_of_photos);
+    _mav_put_uint16_t(buf, 2, air_time);
+    _mav_put_uint8_t(buf, 4, parachute_status);
+    _mav_put_uint8_t(buf, 5, airspeed_cal_status);
+    _mav_put_uint8_t(buf, 6, home_init_status);
+    _mav_put_uint8_t(buf, 7, land_detected_status);
+    _mav_put_uint8_t(buf, 8, altitude_override_status);
+    _mav_put_uint8_t(buf, 9, speed_override_status);
+    _mav_put_uint8_t(buf, 10, failsafe_status);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, buf, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #else
-	mavlink_cap_status_t packet;
-	packet.number_of_photos = number_of_photos;
-	packet.air_time = air_time;
-	packet.parachute_status = parachute_status;
-	packet.airspeed_cal_status = airspeed_cal_status;
-	packet.home_init_status = home_init_status;
-	packet.land_detected_status = land_detected_status;
-	packet.altitude_override_status = altitude_override_status;
-	packet.speed_override_status = speed_override_status;
-	packet.failsafe_status = failsafe_status;
+    mavlink_cap_status_t packet;
+    packet.number_of_photos = number_of_photos;
+    packet.air_time = air_time;
+    packet.parachute_status = parachute_status;
+    packet.airspeed_cal_status = airspeed_cal_status;
+    packet.home_init_status = home_init_status;
+    packet.land_detected_status = land_detected_status;
+    packet.altitude_override_status = altitude_override_status;
+    packet.speed_override_status = speed_override_status;
+    packet.failsafe_status = failsafe_status;
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, (const char *)&packet, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #endif
@@ -262,29 +263,29 @@ static inline void mavlink_msg_cap_status_send_struct(mavlink_channel_t chan, co
 static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint8_t parachute_status, uint8_t airspeed_cal_status, uint8_t home_init_status, uint8_t land_detected_status, uint8_t altitude_override_status, uint8_t speed_override_status, uint16_t number_of_photos, uint8_t failsafe_status, uint16_t air_time)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-	char *buf = (char *)msgbuf;
-	_mav_put_uint16_t(buf, 0, number_of_photos);
-	_mav_put_uint16_t(buf, 2, air_time);
-	_mav_put_uint8_t(buf, 4, parachute_status);
-	_mav_put_uint8_t(buf, 5, airspeed_cal_status);
-	_mav_put_uint8_t(buf, 6, home_init_status);
-	_mav_put_uint8_t(buf, 7, land_detected_status);
-	_mav_put_uint8_t(buf, 8, altitude_override_status);
-	_mav_put_uint8_t(buf, 9, speed_override_status);
-	_mav_put_uint8_t(buf, 10, failsafe_status);
+    char *buf = (char *)msgbuf;
+    _mav_put_uint16_t(buf, 0, number_of_photos);
+    _mav_put_uint16_t(buf, 2, air_time);
+    _mav_put_uint8_t(buf, 4, parachute_status);
+    _mav_put_uint8_t(buf, 5, airspeed_cal_status);
+    _mav_put_uint8_t(buf, 6, home_init_status);
+    _mav_put_uint8_t(buf, 7, land_detected_status);
+    _mav_put_uint8_t(buf, 8, altitude_override_status);
+    _mav_put_uint8_t(buf, 9, speed_override_status);
+    _mav_put_uint8_t(buf, 10, failsafe_status);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, buf, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #else
-	mavlink_cap_status_t *packet = (mavlink_cap_status_t *)msgbuf;
-	packet->number_of_photos = number_of_photos;
-	packet->air_time = air_time;
-	packet->parachute_status = parachute_status;
-	packet->airspeed_cal_status = airspeed_cal_status;
-	packet->home_init_status = home_init_status;
-	packet->land_detected_status = land_detected_status;
-	packet->altitude_override_status = altitude_override_status;
-	packet->speed_override_status = speed_override_status;
-	packet->failsafe_status = failsafe_status;
+    mavlink_cap_status_t *packet = (mavlink_cap_status_t *)msgbuf;
+    packet->number_of_photos = number_of_photos;
+    packet->air_time = air_time;
+    packet->parachute_status = parachute_status;
+    packet->airspeed_cal_status = airspeed_cal_status;
+    packet->home_init_status = home_init_status;
+    packet->land_detected_status = land_detected_status;
+    packet->altitude_override_status = altitude_override_status;
+    packet->speed_override_status = speed_override_status;
+    packet->failsafe_status = failsafe_status;
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, (const char *)packet, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #endif
@@ -303,7 +304,7 @@ static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint8_t mavlink_msg_cap_status_get_parachute_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  4);
+    return _MAV_RETURN_uint8_t(msg,  4);
 }
 
 /**
@@ -313,7 +314,7 @@ static inline uint8_t mavlink_msg_cap_status_get_parachute_status(const mavlink_
  */
 static inline uint8_t mavlink_msg_cap_status_get_airspeed_cal_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  5);
+    return _MAV_RETURN_uint8_t(msg,  5);
 }
 
 /**
@@ -323,7 +324,7 @@ static inline uint8_t mavlink_msg_cap_status_get_airspeed_cal_status(const mavli
  */
 static inline uint8_t mavlink_msg_cap_status_get_home_init_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  6);
+    return _MAV_RETURN_uint8_t(msg,  6);
 }
 
 /**
@@ -333,7 +334,7 @@ static inline uint8_t mavlink_msg_cap_status_get_home_init_status(const mavlink_
  */
 static inline uint8_t mavlink_msg_cap_status_get_land_detected_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  7);
+    return _MAV_RETURN_uint8_t(msg,  7);
 }
 
 /**
@@ -343,7 +344,7 @@ static inline uint8_t mavlink_msg_cap_status_get_land_detected_status(const mavl
  */
 static inline uint8_t mavlink_msg_cap_status_get_altitude_override_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  8);
+    return _MAV_RETURN_uint8_t(msg,  8);
 }
 
 /**
@@ -353,7 +354,7 @@ static inline uint8_t mavlink_msg_cap_status_get_altitude_override_status(const 
  */
 static inline uint8_t mavlink_msg_cap_status_get_speed_override_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  9);
+    return _MAV_RETURN_uint8_t(msg,  9);
 }
 
 /**
@@ -363,7 +364,7 @@ static inline uint8_t mavlink_msg_cap_status_get_speed_override_status(const mav
  */
 static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  0);
+    return _MAV_RETURN_uint16_t(msg,  0);
 }
 
 /**
@@ -373,7 +374,7 @@ static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink
  */
 static inline uint8_t mavlink_msg_cap_status_get_failsafe_status(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  10);
+    return _MAV_RETURN_uint8_t(msg,  10);
 }
 
 /**
@@ -383,7 +384,7 @@ static inline uint8_t mavlink_msg_cap_status_get_failsafe_status(const mavlink_m
  */
 static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  2);
+    return _MAV_RETURN_uint16_t(msg,  2);
 }
 
 /**
@@ -395,18 +396,18 @@ static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message
 static inline void mavlink_msg_cap_status_decode(const mavlink_message_t* msg, mavlink_cap_status_t* cap_status)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-	cap_status->number_of_photos = mavlink_msg_cap_status_get_number_of_photos(msg);
-	cap_status->air_time = mavlink_msg_cap_status_get_air_time(msg);
-	cap_status->parachute_status = mavlink_msg_cap_status_get_parachute_status(msg);
-	cap_status->airspeed_cal_status = mavlink_msg_cap_status_get_airspeed_cal_status(msg);
-	cap_status->home_init_status = mavlink_msg_cap_status_get_home_init_status(msg);
-	cap_status->land_detected_status = mavlink_msg_cap_status_get_land_detected_status(msg);
-	cap_status->altitude_override_status = mavlink_msg_cap_status_get_altitude_override_status(msg);
-	cap_status->speed_override_status = mavlink_msg_cap_status_get_speed_override_status(msg);
-	cap_status->failsafe_status = mavlink_msg_cap_status_get_failsafe_status(msg);
+    cap_status->number_of_photos = mavlink_msg_cap_status_get_number_of_photos(msg);
+    cap_status->air_time = mavlink_msg_cap_status_get_air_time(msg);
+    cap_status->parachute_status = mavlink_msg_cap_status_get_parachute_status(msg);
+    cap_status->airspeed_cal_status = mavlink_msg_cap_status_get_airspeed_cal_status(msg);
+    cap_status->home_init_status = mavlink_msg_cap_status_get_home_init_status(msg);
+    cap_status->land_detected_status = mavlink_msg_cap_status_get_land_detected_status(msg);
+    cap_status->altitude_override_status = mavlink_msg_cap_status_get_altitude_override_status(msg);
+    cap_status->speed_override_status = mavlink_msg_cap_status_get_speed_override_status(msg);
+    cap_status->failsafe_status = mavlink_msg_cap_status_get_failsafe_status(msg);
 #else
         uint8_t len = msg->len < MAVLINK_MSG_ID_CAP_STATUS_LEN? msg->len : MAVLINK_MSG_ID_CAP_STATUS_LEN;
         memset(cap_status, 0, MAVLINK_MSG_ID_CAP_STATUS_LEN);
-	memcpy(cap_status, _MAV_PAYLOAD(msg), len);
+    memcpy(cap_status, _MAV_PAYLOAD(msg), len);
 #endif
 }
