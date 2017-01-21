@@ -37,19 +37,19 @@ static void mavlink_test_cap_status(uint8_t system_id, uint8_t component_id, mav
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_cap_status_t packet_in = {
-        17235,17339,17,84,151,218,29,96,163
+        123.0,179.0,235.0,18483,18587,18691,18795,18899,19003
     };
     mavlink_cap_status_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
+        packet1.home_latitude = packet_in.home_latitude;
+        packet1.home_longitude = packet_in.home_longitude;
+        packet1.home_altitude = packet_in.home_altitude;
         packet1.number_of_photos = packet_in.number_of_photos;
         packet1.air_time = packet_in.air_time;
-        packet1.parachute_status = packet_in.parachute_status;
-        packet1.airspeed_cal_status = packet_in.airspeed_cal_status;
-        packet1.home_init_status = packet_in.home_init_status;
-        packet1.land_detected_status = packet_in.land_detected_status;
-        packet1.altitude_override_status = packet_in.altitude_override_status;
-        packet1.speed_override_status = packet_in.speed_override_status;
-        packet1.failsafe_status = packet_in.failsafe_status;
+        packet1.battery_voltage = packet_in.battery_voltage;
+        packet1.battery_current = packet_in.battery_current;
+        packet1.battery_remaining = packet_in.battery_remaining;
+        packet1.global_status = packet_in.global_status;
         
         
 #ifdef MAVLINK_STATUS_FLAG_OUT_MAVLINK1
@@ -64,12 +64,12 @@ static void mavlink_test_cap_status(uint8_t system_id, uint8_t component_id, mav
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_cap_status_pack(system_id, component_id, &msg , packet1.parachute_status , packet1.airspeed_cal_status , packet1.home_init_status , packet1.land_detected_status , packet1.altitude_override_status , packet1.speed_override_status , packet1.number_of_photos , packet1.failsafe_status , packet1.air_time );
+    mavlink_msg_cap_status_pack(system_id, component_id, &msg , packet1.number_of_photos , packet1.air_time , packet1.battery_voltage , packet1.battery_current , packet1.battery_remaining , packet1.global_status , packet1.home_latitude , packet1.home_longitude , packet1.home_altitude );
     mavlink_msg_cap_status_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_cap_status_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.parachute_status , packet1.airspeed_cal_status , packet1.home_init_status , packet1.land_detected_status , packet1.altitude_override_status , packet1.speed_override_status , packet1.number_of_photos , packet1.failsafe_status , packet1.air_time );
+    mavlink_msg_cap_status_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.number_of_photos , packet1.air_time , packet1.battery_voltage , packet1.battery_current , packet1.battery_remaining , packet1.global_status , packet1.home_latitude , packet1.home_longitude , packet1.home_altitude );
     mavlink_msg_cap_status_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -82,7 +82,7 @@ static void mavlink_test_cap_status(uint8_t system_id, uint8_t component_id, mav
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_cap_status_send(MAVLINK_COMM_1 , packet1.parachute_status , packet1.airspeed_cal_status , packet1.home_init_status , packet1.land_detected_status , packet1.altitude_override_status , packet1.speed_override_status , packet1.number_of_photos , packet1.failsafe_status , packet1.air_time );
+    mavlink_msg_cap_status_send(MAVLINK_COMM_1 , packet1.number_of_photos , packet1.air_time , packet1.battery_voltage , packet1.battery_current , packet1.battery_remaining , packet1.global_status , packet1.home_latitude , packet1.home_longitude , packet1.home_altitude );
     mavlink_msg_cap_status_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
