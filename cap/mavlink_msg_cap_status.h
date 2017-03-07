@@ -8,7 +8,7 @@ typedef struct __mavlink_cap_status_t {
  double home_latitude; /*< Home latitude*/
  double home_longitude; /*< Home longitude*/
  double home_altitude; /*< Home altitude*/
- uint32_t global_status; /*< 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6--failsafe, 7-battery low, 8-battery critical, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission,  13-failsafe offboard loss*/
+ uint32_t global_status; /*< 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control*/
  uint16_t number_of_photos; /*< Number of photos taken in a mission*/
  uint16_t air_time; /*< Time since take-off*/
  uint16_t battery_voltage; /*< Battery voltage*/
@@ -70,7 +70,7 @@ typedef struct __mavlink_cap_status_t {
  * @param battery_voltage Battery voltage
  * @param battery_current Battery current
  * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6--failsafe, 7-battery low, 8-battery critical, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission,  13-failsafe offboard loss
+ * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control
  * @param home_latitude Home latitude
  * @param home_longitude Home longitude
  * @param home_altitude Home altitude
@@ -122,7 +122,7 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
  * @param battery_voltage Battery voltage
  * @param battery_current Battery current
  * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6--failsafe, 7-battery low, 8-battery critical, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission,  13-failsafe offboard loss
+ * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control
  * @param home_latitude Home latitude
  * @param home_longitude Home longitude
  * @param home_altitude Home altitude
@@ -200,7 +200,7 @@ static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uin
  * @param battery_voltage Battery voltage
  * @param battery_current Battery current
  * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6--failsafe, 7-battery low, 8-battery critical, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission,  13-failsafe offboard loss
+ * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control
  * @param home_latitude Home latitude
  * @param home_longitude Home longitude
  * @param home_altitude Home altitude
@@ -350,7 +350,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_remaining(const mavlin
 /**
  * @brief Get field global_status from cap_status message
  *
- * @return 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6--failsafe, 7-battery low, 8-battery critical, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission,  13-failsafe offboard loss
+ * @return 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control
  */
 static inline uint32_t mavlink_msg_cap_status_get_global_status(const mavlink_message_t* msg)
 {
