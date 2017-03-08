@@ -268,11 +268,12 @@ static void mavlink_test_terrain_elevation(uint8_t system_id, uint8_t component_
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
     mavlink_terrain_elevation_t packet_in = {
-        17.0
+        17.0,17
     };
     mavlink_terrain_elevation_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
         packet1.terrain_elevation = packet_in.terrain_elevation;
+        packet1.target_system = packet_in.target_system;
         
         
 #ifdef MAVLINK_STATUS_FLAG_OUT_MAVLINK1
@@ -287,12 +288,12 @@ static void mavlink_test_terrain_elevation(uint8_t system_id, uint8_t component_
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_terrain_elevation_pack(system_id, component_id, &msg , packet1.terrain_elevation );
+    mavlink_msg_terrain_elevation_pack(system_id, component_id, &msg , packet1.target_system , packet1.terrain_elevation );
     mavlink_msg_terrain_elevation_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_terrain_elevation_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.terrain_elevation );
+    mavlink_msg_terrain_elevation_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.target_system , packet1.terrain_elevation );
     mavlink_msg_terrain_elevation_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -305,7 +306,7 @@ static void mavlink_test_terrain_elevation(uint8_t system_id, uint8_t component_
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-    mavlink_msg_terrain_elevation_send(MAVLINK_COMM_1 , packet1.terrain_elevation );
+    mavlink_msg_terrain_elevation_send(MAVLINK_COMM_1 , packet1.target_system , packet1.terrain_elevation );
     mavlink_msg_terrain_elevation_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
