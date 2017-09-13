@@ -6,7 +6,7 @@
 MAVPACKED(
 typedef struct __mavlink_distance_sensor_t {
  uint32_t time_boot_ms; /*< Time since system boot*/
- uint16_t min_distance; /*< Minimum distance the sensor can measure in centimeters*/
+ uint16_t min_distance; /*<  Minimum distance the sensor can measure in centimeters*/
  uint16_t max_distance; /*< Maximum distance the sensor can measure in centimeters*/
  uint16_t current_distance; /*< Current distance reading*/
  uint8_t type; /*< Type from MAV_DISTANCE_SENSOR enum.*/
@@ -63,7 +63,7 @@ typedef struct __mavlink_distance_sensor_t {
  * @param msg The MAVLink message to compress the data into
  *
  * @param time_boot_ms Time since system boot
- * @param min_distance Minimum distance the sensor can measure in centimeters
+ * @param min_distance  Minimum distance the sensor can measure in centimeters
  * @param max_distance Maximum distance the sensor can measure in centimeters
  * @param current_distance Current distance reading
  * @param type Type from MAV_DISTANCE_SENSOR enum.
@@ -112,7 +112,7 @@ static inline uint16_t mavlink_msg_distance_sensor_pack(uint8_t system_id, uint8
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
  * @param time_boot_ms Time since system boot
- * @param min_distance Minimum distance the sensor can measure in centimeters
+ * @param min_distance  Minimum distance the sensor can measure in centimeters
  * @param max_distance Maximum distance the sensor can measure in centimeters
  * @param current_distance Current distance reading
  * @param type Type from MAV_DISTANCE_SENSOR enum.
@@ -187,7 +187,7 @@ static inline uint16_t mavlink_msg_distance_sensor_encode_chan(uint8_t system_id
  * @param chan MAVLink channel to send the message
  *
  * @param time_boot_ms Time since system boot
- * @param min_distance Minimum distance the sensor can measure in centimeters
+ * @param min_distance  Minimum distance the sensor can measure in centimeters
  * @param max_distance Maximum distance the sensor can measure in centimeters
  * @param current_distance Current distance reading
  * @param type Type from MAV_DISTANCE_SENSOR enum.
@@ -296,7 +296,7 @@ static inline uint32_t mavlink_msg_distance_sensor_get_time_boot_ms(const mavlin
 /**
  * @brief Get field min_distance from distance_sensor message
  *
- * @return Minimum distance the sensor can measure in centimeters
+ * @return  Minimum distance the sensor can measure in centimeters
  */
 static inline uint16_t mavlink_msg_distance_sensor_get_min_distance(const mavlink_message_t* msg)
 {
