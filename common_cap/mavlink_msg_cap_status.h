@@ -33,34 +33,34 @@ typedef struct __mavlink_cap_status_t {
     180, \
     "CAP_STATUS", \
     11, \
-    {  { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
-         { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
-         { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
-         { "global_status", NULL, MAVLINK_TYPE_UINT32_T, 0, 24, offsetof(mavlink_cap_status_t, global_status) }, \
-         { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
-         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 32, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+    {  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 32, offsetof(mavlink_cap_status_t, number_of_photos) }, \
          { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 34, offsetof(mavlink_cap_status_t, air_time) }, \
          { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 36, offsetof(mavlink_cap_status_t, battery_voltage) }, \
          { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 38, offsetof(mavlink_cap_status_t, battery_current) }, \
          { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 40, offsetof(mavlink_cap_status_t, battery_remaining) }, \
+         { "global_status", NULL, MAVLINK_TYPE_UINT32_T, 0, 24, offsetof(mavlink_cap_status_t, global_status) }, \
+         { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
+         { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
+         { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
          { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 42, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
+         { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_CAP_STATUS { \
     "CAP_STATUS", \
     11, \
-    {  { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
-         { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
-         { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
-         { "global_status", NULL, MAVLINK_TYPE_UINT32_T, 0, 24, offsetof(mavlink_cap_status_t, global_status) }, \
-         { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
-         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 32, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+    {  { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 32, offsetof(mavlink_cap_status_t, number_of_photos) }, \
          { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 34, offsetof(mavlink_cap_status_t, air_time) }, \
          { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 36, offsetof(mavlink_cap_status_t, battery_voltage) }, \
          { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 38, offsetof(mavlink_cap_status_t, battery_current) }, \
          { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 40, offsetof(mavlink_cap_status_t, battery_remaining) }, \
+         { "global_status", NULL, MAVLINK_TYPE_UINT32_T, 0, 24, offsetof(mavlink_cap_status_t, global_status) }, \
+         { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
+         { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
+         { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
          { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 42, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
+         { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
          } \
 }
 #endif

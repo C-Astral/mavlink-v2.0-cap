@@ -26,20 +26,20 @@ typedef struct __mavlink_mission_hash_t {
     183, \
     "MISSION_HASH", \
     4, \
-    {  { "hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_mission_hash_t, hash) }, \
-         { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_mission_hash_t, target_system) }, \
+    {  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_mission_hash_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 5, offsetof(mavlink_mission_hash_t, target_component) }, \
          { "request", NULL, MAVLINK_TYPE_UINT8_T, 0, 6, offsetof(mavlink_mission_hash_t, request) }, \
+         { "hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_mission_hash_t, hash) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_MISSION_HASH { \
     "MISSION_HASH", \
     4, \
-    {  { "hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_mission_hash_t, hash) }, \
-         { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_mission_hash_t, target_system) }, \
+    {  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 4, offsetof(mavlink_mission_hash_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 5, offsetof(mavlink_mission_hash_t, target_component) }, \
          { "request", NULL, MAVLINK_TYPE_UINT8_T, 0, 6, offsetof(mavlink_mission_hash_t, request) }, \
+         { "hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 0, offsetof(mavlink_mission_hash_t, hash) }, \
          } \
 }
 #endif

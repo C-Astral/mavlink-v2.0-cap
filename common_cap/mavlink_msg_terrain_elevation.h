@@ -25,18 +25,18 @@ typedef struct __mavlink_terrain_elevation_t {
     184, \
     "TERRAIN_ELEVATION", \
     3, \
-    {  { "terrain_elevation", NULL, MAVLINK_TYPE_INT16_T, 0, 0, offsetof(mavlink_terrain_elevation_t, terrain_elevation) }, \
-         { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_terrain_elevation_t, target_system) }, \
+    {  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_terrain_elevation_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 3, offsetof(mavlink_terrain_elevation_t, target_component) }, \
+         { "terrain_elevation", NULL, MAVLINK_TYPE_INT16_T, 0, 0, offsetof(mavlink_terrain_elevation_t, terrain_elevation) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_TERRAIN_ELEVATION { \
     "TERRAIN_ELEVATION", \
     3, \
-    {  { "terrain_elevation", NULL, MAVLINK_TYPE_INT16_T, 0, 0, offsetof(mavlink_terrain_elevation_t, terrain_elevation) }, \
-         { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_terrain_elevation_t, target_system) }, \
+    {  { "target_system", NULL, MAVLINK_TYPE_UINT8_T, 0, 2, offsetof(mavlink_terrain_elevation_t, target_system) }, \
          { "target_component", NULL, MAVLINK_TYPE_UINT8_T, 0, 3, offsetof(mavlink_terrain_elevation_t, target_component) }, \
+         { "terrain_elevation", NULL, MAVLINK_TYPE_INT16_T, 0, 0, offsetof(mavlink_terrain_elevation_t, terrain_elevation) }, \
          } \
 }
 #endif
