@@ -5,12 +5,12 @@
 
 MAVPACKED(
 typedef struct __mavlink_serial_passthrough_t {
- uint8_t target_system; /*< System which should execute the command*/
- uint8_t target_component; /*< Component which should execute the command, 0 for all components*/
- uint8_t confirmation; /*< 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)*/
- uint8_t data[128]; /*< Data*/
- uint8_t size; /*< Data size*/
- uint8_t number; /*< Message number used for acknowledge*/
+ uint8_t target_system; /*<  System which should execute the command*/
+ uint8_t target_component; /*<  Component which should execute the command, 0 for all components*/
+ uint8_t confirmation; /*<  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)*/
+ uint8_t data[128]; /*<  Data*/
+ uint8_t size; /*<  Data size*/
+ uint8_t number; /*<  Message number used for acknowledge*/
 }) mavlink_serial_passthrough_t;
 
 #define MAVLINK_MSG_ID_SERIAL_PASSTHROUGH_LEN 133
@@ -56,12 +56,12 @@ typedef struct __mavlink_serial_passthrough_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param confirmation 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
- * @param data Data
- * @param size Data size
- * @param number Message number used for acknowledge
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param data  Data
+ * @param size  Data size
+ * @param number  Message number used for acknowledge
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_serial_passthrough_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -97,12 +97,12 @@ static inline uint16_t mavlink_msg_serial_passthrough_pack(uint8_t system_id, ui
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param confirmation 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
- * @param data Data
- * @param size Data size
- * @param number Message number used for acknowledge
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param data  Data
+ * @param size  Data size
+ * @param number  Message number used for acknowledge
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_serial_passthrough_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -164,12 +164,12 @@ static inline uint16_t mavlink_msg_serial_passthrough_encode_chan(uint8_t system
  * @brief Send a serial_passthrough message
  * @param chan MAVLink channel to send the message
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param confirmation 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
- * @param data Data
- * @param size Data size
- * @param number Message number used for acknowledge
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param confirmation  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @param data  Data
+ * @param size  Data size
+ * @param number  Message number used for acknowledge
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -250,7 +250,7 @@ static inline void mavlink_msg_serial_passthrough_send_buf(mavlink_message_t *ms
 /**
  * @brief Get field target_system from serial_passthrough message
  *
- * @return System which should execute the command
+ * @return  System which should execute the command
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_target_system(const mavlink_message_t* msg)
 {
@@ -260,7 +260,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_target_system(const mav
 /**
  * @brief Get field target_component from serial_passthrough message
  *
- * @return Component which should execute the command, 0 for all components
+ * @return  Component which should execute the command, 0 for all components
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_target_component(const mavlink_message_t* msg)
 {
@@ -270,7 +270,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_target_component(const 
 /**
  * @brief Get field confirmation from serial_passthrough message
  *
- * @return 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
+ * @return  0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_confirmation(const mavlink_message_t* msg)
 {
@@ -280,7 +280,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_confirmation(const mavl
 /**
  * @brief Get field data from serial_passthrough message
  *
- * @return Data
+ * @return  Data
  */
 static inline uint16_t mavlink_msg_serial_passthrough_get_data(const mavlink_message_t* msg, uint8_t *data)
 {
@@ -290,7 +290,7 @@ static inline uint16_t mavlink_msg_serial_passthrough_get_data(const mavlink_mes
 /**
  * @brief Get field size from serial_passthrough message
  *
- * @return Data size
+ * @return  Data size
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_size(const mavlink_message_t* msg)
 {
@@ -300,7 +300,7 @@ static inline uint8_t mavlink_msg_serial_passthrough_get_size(const mavlink_mess
 /**
  * @brief Get field number from serial_passthrough message
  *
- * @return Message number used for acknowledge
+ * @return  Message number used for acknowledge
  */
 static inline uint8_t mavlink_msg_serial_passthrough_get_number(const mavlink_message_t* msg)
 {

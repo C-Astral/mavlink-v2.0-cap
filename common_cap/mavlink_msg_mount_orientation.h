@@ -5,10 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_mount_orientation_t {
- uint32_t time_boot_ms; /*< Timestamp (milliseconds since system boot)*/
- float roll; /*< Roll in degrees*/
- float pitch; /*< Pitch in degrees*/
- float yaw; /*< Yaw in degrees*/
+ uint32_t time_boot_ms; /*< [ms] Timestamp (milliseconds since system boot)*/
+ float roll; /*< [deg] Roll in degrees*/
+ float pitch; /*< [deg] Pitch in degrees*/
+ float yaw; /*< [deg] Yaw in degrees*/
 }) mavlink_mount_orientation_t;
 
 #define MAVLINK_MSG_ID_MOUNT_ORIENTATION_LEN 16
@@ -50,10 +50,10 @@ typedef struct __mavlink_mount_orientation_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_boot_ms Timestamp (milliseconds since system boot)
- * @param roll Roll in degrees
- * @param pitch Pitch in degrees
- * @param yaw Yaw in degrees
+ * @param time_boot_ms [ms] Timestamp (milliseconds since system boot)
+ * @param roll [deg] Roll in degrees
+ * @param pitch [deg] Pitch in degrees
+ * @param yaw [deg] Yaw in degrees
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mount_orientation_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -87,10 +87,10 @@ static inline uint16_t mavlink_msg_mount_orientation_pack(uint8_t system_id, uin
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_boot_ms Timestamp (milliseconds since system boot)
- * @param roll Roll in degrees
- * @param pitch Pitch in degrees
- * @param yaw Yaw in degrees
+ * @param time_boot_ms [ms] Timestamp (milliseconds since system boot)
+ * @param roll [deg] Roll in degrees
+ * @param pitch [deg] Pitch in degrees
+ * @param yaw [deg] Yaw in degrees
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mount_orientation_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -150,10 +150,10 @@ static inline uint16_t mavlink_msg_mount_orientation_encode_chan(uint8_t system_
  * @brief Send a mount_orientation message
  * @param chan MAVLink channel to send the message
  *
- * @param time_boot_ms Timestamp (milliseconds since system boot)
- * @param roll Roll in degrees
- * @param pitch Pitch in degrees
- * @param yaw Yaw in degrees
+ * @param time_boot_ms [ms] Timestamp (milliseconds since system boot)
+ * @param roll [deg] Roll in degrees
+ * @param pitch [deg] Pitch in degrees
+ * @param yaw [deg] Yaw in degrees
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -230,7 +230,7 @@ static inline void mavlink_msg_mount_orientation_send_buf(mavlink_message_t *msg
 /**
  * @brief Get field time_boot_ms from mount_orientation message
  *
- * @return Timestamp (milliseconds since system boot)
+ * @return [ms] Timestamp (milliseconds since system boot)
  */
 static inline uint32_t mavlink_msg_mount_orientation_get_time_boot_ms(const mavlink_message_t* msg)
 {
@@ -240,7 +240,7 @@ static inline uint32_t mavlink_msg_mount_orientation_get_time_boot_ms(const mavl
 /**
  * @brief Get field roll from mount_orientation message
  *
- * @return Roll in degrees
+ * @return [deg] Roll in degrees
  */
 static inline float mavlink_msg_mount_orientation_get_roll(const mavlink_message_t* msg)
 {
@@ -250,7 +250,7 @@ static inline float mavlink_msg_mount_orientation_get_roll(const mavlink_message
 /**
  * @brief Get field pitch from mount_orientation message
  *
- * @return Pitch in degrees
+ * @return [deg] Pitch in degrees
  */
 static inline float mavlink_msg_mount_orientation_get_pitch(const mavlink_message_t* msg)
 {
@@ -260,7 +260,7 @@ static inline float mavlink_msg_mount_orientation_get_pitch(const mavlink_messag
 /**
  * @brief Get field yaw from mount_orientation message
  *
- * @return Yaw in degrees
+ * @return [deg] Yaw in degrees
  */
 static inline float mavlink_msg_mount_orientation_get_yaw(const mavlink_message_t* msg)
 {

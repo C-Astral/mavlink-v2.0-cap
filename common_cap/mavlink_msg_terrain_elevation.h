@@ -5,9 +5,9 @@
 
 MAVPACKED(
 typedef struct __mavlink_terrain_elevation_t {
- int16_t terrain_elevation; /*< Terrain elevation*/
- uint8_t target_system; /*< System which should execute the command*/
- uint8_t target_component; /*< Component which should execute the command, 0 for all components*/
+ int16_t terrain_elevation; /*<  Terrain elevation*/
+ uint8_t target_system; /*<  System which should execute the command*/
+ uint8_t target_component; /*<  Component which should execute the command, 0 for all components*/
 }) mavlink_terrain_elevation_t;
 
 #define MAVLINK_MSG_ID_TERRAIN_ELEVATION_LEN 4
@@ -47,9 +47,9 @@ typedef struct __mavlink_terrain_elevation_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param terrain_elevation Terrain elevation
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param terrain_elevation  Terrain elevation
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_terrain_elevation_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -81,9 +81,9 @@ static inline uint16_t mavlink_msg_terrain_elevation_pack(uint8_t system_id, uin
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param terrain_elevation Terrain elevation
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param terrain_elevation  Terrain elevation
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_terrain_elevation_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -141,9 +141,9 @@ static inline uint16_t mavlink_msg_terrain_elevation_encode_chan(uint8_t system_
  * @brief Send a terrain_elevation message
  * @param chan MAVLink channel to send the message
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param terrain_elevation Terrain elevation
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param terrain_elevation  Terrain elevation
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -216,7 +216,7 @@ static inline void mavlink_msg_terrain_elevation_send_buf(mavlink_message_t *msg
 /**
  * @brief Get field target_system from terrain_elevation message
  *
- * @return System which should execute the command
+ * @return  System which should execute the command
  */
 static inline uint8_t mavlink_msg_terrain_elevation_get_target_system(const mavlink_message_t* msg)
 {
@@ -226,7 +226,7 @@ static inline uint8_t mavlink_msg_terrain_elevation_get_target_system(const mavl
 /**
  * @brief Get field target_component from terrain_elevation message
  *
- * @return Component which should execute the command, 0 for all components
+ * @return  Component which should execute the command, 0 for all components
  */
 static inline uint8_t mavlink_msg_terrain_elevation_get_target_component(const mavlink_message_t* msg)
 {
@@ -236,7 +236,7 @@ static inline uint8_t mavlink_msg_terrain_elevation_get_target_component(const m
 /**
  * @brief Get field terrain_elevation from terrain_elevation message
  *
- * @return Terrain elevation
+ * @return  Terrain elevation
  */
 static inline int16_t mavlink_msg_terrain_elevation_get_terrain_elevation(const mavlink_message_t* msg)
 {

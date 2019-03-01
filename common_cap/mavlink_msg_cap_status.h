@@ -5,17 +5,17 @@
 
 MAVPACKED(
 typedef struct __mavlink_cap_status_t {
- double home_latitude; /*< Home latitude*/
- double home_longitude; /*< Home longitude*/
- double home_altitude; /*< Home altitude*/
- uint32_t global_status; /*< 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type*/
- float speed_override_value; /*< Speed override value*/
- uint16_t number_of_photos; /*< Number of photos taken in a mission*/
- uint16_t air_time; /*< Time since take-off*/
- uint16_t battery_voltage; /*< Battery voltage*/
- uint16_t battery_current; /*< Battery current*/
- uint16_t battery_remaining; /*< Battery remaining*/
- int16_t altitude_override_value; /*< Altutde override value*/
+ double home_latitude; /*<  Home latitude*/
+ double home_longitude; /*<  Home longitude*/
+ double home_altitude; /*<  Home altitude*/
+ uint32_t global_status; /*<  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended*/
+ float speed_override_value; /*<  Speed override value*/
+ uint16_t number_of_photos; /*<  Number of photos taken in a mission*/
+ uint16_t air_time; /*<  Time since take-off*/
+ uint16_t battery_voltage; /*<  Battery voltage*/
+ uint16_t battery_current; /*<  Battery current*/
+ uint16_t battery_remaining; /*<  Battery remaining*/
+ int16_t altitude_override_value; /*<  Altutde override value*/
 }) mavlink_cap_status_t;
 
 #define MAVLINK_MSG_ID_CAP_STATUS_LEN 44
@@ -71,17 +71,17 @@ typedef struct __mavlink_cap_status_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param number_of_photos Number of photos taken in a mission
- * @param air_time Time since take-off
- * @param battery_voltage Battery voltage
- * @param battery_current Battery current
- * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type
- * @param home_latitude Home latitude
- * @param home_longitude Home longitude
- * @param home_altitude Home altitude
- * @param altitude_override_value Altutde override value
- * @param speed_override_value Speed override value
+ * @param number_of_photos  Number of photos taken in a mission
+ * @param air_time  Time since take-off
+ * @param battery_voltage  Battery voltage
+ * @param battery_current  Battery current
+ * @param battery_remaining  Battery remaining
+ * @param global_status  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended
+ * @param home_latitude  Home latitude
+ * @param home_longitude  Home longitude
+ * @param home_altitude  Home altitude
+ * @param altitude_override_value  Altutde override value
+ * @param speed_override_value  Speed override value
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -129,17 +129,17 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param number_of_photos Number of photos taken in a mission
- * @param air_time Time since take-off
- * @param battery_voltage Battery voltage
- * @param battery_current Battery current
- * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type
- * @param home_latitude Home latitude
- * @param home_longitude Home longitude
- * @param home_altitude Home altitude
- * @param altitude_override_value Altutde override value
- * @param speed_override_value Speed override value
+ * @param number_of_photos  Number of photos taken in a mission
+ * @param air_time  Time since take-off
+ * @param battery_voltage  Battery voltage
+ * @param battery_current  Battery current
+ * @param battery_remaining  Battery remaining
+ * @param global_status  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended
+ * @param home_latitude  Home latitude
+ * @param home_longitude  Home longitude
+ * @param home_altitude  Home altitude
+ * @param altitude_override_value  Altutde override value
+ * @param speed_override_value  Speed override value
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -213,17 +213,17 @@ static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uin
  * @brief Send a cap_status message
  * @param chan MAVLink channel to send the message
  *
- * @param number_of_photos Number of photos taken in a mission
- * @param air_time Time since take-off
- * @param battery_voltage Battery voltage
- * @param battery_current Battery current
- * @param battery_remaining Battery remaining
- * @param global_status 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type
- * @param home_latitude Home latitude
- * @param home_longitude Home longitude
- * @param home_altitude Home altitude
- * @param altitude_override_value Altutde override value
- * @param speed_override_value Speed override value
+ * @param number_of_photos  Number of photos taken in a mission
+ * @param air_time  Time since take-off
+ * @param battery_voltage  Battery voltage
+ * @param battery_current  Battery current
+ * @param battery_remaining  Battery remaining
+ * @param global_status  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended
+ * @param home_latitude  Home latitude
+ * @param home_longitude  Home longitude
+ * @param home_altitude  Home altitude
+ * @param altitude_override_value  Altutde override value
+ * @param speed_override_value  Speed override value
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -328,7 +328,7 @@ static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, ma
 /**
  * @brief Get field number_of_photos from cap_status message
  *
- * @return Number of photos taken in a mission
+ * @return  Number of photos taken in a mission
  */
 static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink_message_t* msg)
 {
@@ -338,7 +338,7 @@ static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink
 /**
  * @brief Get field air_time from cap_status message
  *
- * @return Time since take-off
+ * @return  Time since take-off
  */
 static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message_t* msg)
 {
@@ -348,7 +348,7 @@ static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message
 /**
  * @brief Get field battery_voltage from cap_status message
  *
- * @return Battery voltage
+ * @return  Battery voltage
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_voltage(const mavlink_message_t* msg)
 {
@@ -358,7 +358,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_voltage(const mavlink_
 /**
  * @brief Get field battery_current from cap_status message
  *
- * @return Battery current
+ * @return  Battery current
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_current(const mavlink_message_t* msg)
 {
@@ -368,7 +368,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_current(const mavlink_
 /**
  * @brief Get field battery_remaining from cap_status message
  *
- * @return Battery remaining
+ * @return  Battery remaining
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_remaining(const mavlink_message_t* msg)
 {
@@ -378,7 +378,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_remaining(const mavlin
 /**
  * @brief Get field global_status from cap_status message
  *
- * @return 0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type
+ * @return  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended
  */
 static inline uint32_t mavlink_msg_cap_status_get_global_status(const mavlink_message_t* msg)
 {
@@ -388,7 +388,7 @@ static inline uint32_t mavlink_msg_cap_status_get_global_status(const mavlink_me
 /**
  * @brief Get field home_latitude from cap_status message
  *
- * @return Home latitude
+ * @return  Home latitude
  */
 static inline double mavlink_msg_cap_status_get_home_latitude(const mavlink_message_t* msg)
 {
@@ -398,7 +398,7 @@ static inline double mavlink_msg_cap_status_get_home_latitude(const mavlink_mess
 /**
  * @brief Get field home_longitude from cap_status message
  *
- * @return Home longitude
+ * @return  Home longitude
  */
 static inline double mavlink_msg_cap_status_get_home_longitude(const mavlink_message_t* msg)
 {
@@ -408,7 +408,7 @@ static inline double mavlink_msg_cap_status_get_home_longitude(const mavlink_mes
 /**
  * @brief Get field home_altitude from cap_status message
  *
- * @return Home altitude
+ * @return  Home altitude
  */
 static inline double mavlink_msg_cap_status_get_home_altitude(const mavlink_message_t* msg)
 {
@@ -418,7 +418,7 @@ static inline double mavlink_msg_cap_status_get_home_altitude(const mavlink_mess
 /**
  * @brief Get field altitude_override_value from cap_status message
  *
- * @return Altutde override value
+ * @return  Altutde override value
  */
 static inline int16_t mavlink_msg_cap_status_get_altitude_override_value(const mavlink_message_t* msg)
 {
@@ -428,7 +428,7 @@ static inline int16_t mavlink_msg_cap_status_get_altitude_override_value(const m
 /**
  * @brief Get field speed_override_value from cap_status message
  *
- * @return Speed override value
+ * @return  Speed override value
  */
 static inline float mavlink_msg_cap_status_get_speed_override_value(const mavlink_message_t* msg)
 {

@@ -5,10 +5,10 @@
 
 MAVPACKED(
 typedef struct __mavlink_mission_hash_t {
- uint32_t hash; /*< Hash value*/
- uint8_t target_system; /*< System which should execute the command*/
- uint8_t target_component; /*< Component which should execute the command, 0 for all components*/
- uint8_t request; /*< Set to 1 for request, 0 for sending the value*/
+ uint32_t hash; /*<  Hash value*/
+ uint8_t target_system; /*<  System which should execute the command*/
+ uint8_t target_component; /*<  Component which should execute the command, 0 for all components*/
+ uint8_t request; /*<  Set to 1 for request, 0 for sending the value*/
 }) mavlink_mission_hash_t;
 
 #define MAVLINK_MSG_ID_MISSION_HASH_LEN 7
@@ -50,10 +50,10 @@ typedef struct __mavlink_mission_hash_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param request Set to 1 for request, 0 for sending the value
- * @param hash Hash value
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param request  Set to 1 for request, 0 for sending the value
+ * @param hash  Hash value
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_hash_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -87,10 +87,10 @@ static inline uint16_t mavlink_msg_mission_hash_pack(uint8_t system_id, uint8_t 
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param request Set to 1 for request, 0 for sending the value
- * @param hash Hash value
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param request  Set to 1 for request, 0 for sending the value
+ * @param hash  Hash value
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_mission_hash_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -150,10 +150,10 @@ static inline uint16_t mavlink_msg_mission_hash_encode_chan(uint8_t system_id, u
  * @brief Send a mission_hash message
  * @param chan MAVLink channel to send the message
  *
- * @param target_system System which should execute the command
- * @param target_component Component which should execute the command, 0 for all components
- * @param request Set to 1 for request, 0 for sending the value
- * @param hash Hash value
+ * @param target_system  System which should execute the command
+ * @param target_component  Component which should execute the command, 0 for all components
+ * @param request  Set to 1 for request, 0 for sending the value
+ * @param hash  Hash value
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -230,7 +230,7 @@ static inline void mavlink_msg_mission_hash_send_buf(mavlink_message_t *msgbuf, 
 /**
  * @brief Get field target_system from mission_hash message
  *
- * @return System which should execute the command
+ * @return  System which should execute the command
  */
 static inline uint8_t mavlink_msg_mission_hash_get_target_system(const mavlink_message_t* msg)
 {
@@ -240,7 +240,7 @@ static inline uint8_t mavlink_msg_mission_hash_get_target_system(const mavlink_m
 /**
  * @brief Get field target_component from mission_hash message
  *
- * @return Component which should execute the command, 0 for all components
+ * @return  Component which should execute the command, 0 for all components
  */
 static inline uint8_t mavlink_msg_mission_hash_get_target_component(const mavlink_message_t* msg)
 {
@@ -250,7 +250,7 @@ static inline uint8_t mavlink_msg_mission_hash_get_target_component(const mavlin
 /**
  * @brief Get field request from mission_hash message
  *
- * @return Set to 1 for request, 0 for sending the value
+ * @return  Set to 1 for request, 0 for sending the value
  */
 static inline uint8_t mavlink_msg_mission_hash_get_request(const mavlink_message_t* msg)
 {
@@ -260,7 +260,7 @@ static inline uint8_t mavlink_msg_mission_hash_get_request(const mavlink_message
 /**
  * @brief Get field hash from mission_hash message
  *
- * @return Hash value
+ * @return  Hash value
  */
 static inline uint32_t mavlink_msg_mission_hash_get_hash(const mavlink_message_t* msg)
 {
