@@ -6,7 +6,7 @@
 MAVPACKED(
 typedef struct __mavlink_log_request_data_t {
  uint32_t ofs; /*<  Offset into the log*/
- uint32_t count; /*< [bytes] Number of bytes*/
+ uint32_t count; /*<  Number of bytes*/
  uint16_t id; /*<  Log id (from LOG_ENTRY reply)*/
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
@@ -57,7 +57,7 @@ typedef struct __mavlink_log_request_data_t {
  * @param target_component  Component ID
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes
+ * @param count  Number of bytes
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_log_request_data_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -97,7 +97,7 @@ static inline uint16_t mavlink_msg_log_request_data_pack(uint8_t system_id, uint
  * @param target_component  Component ID
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes
+ * @param count  Number of bytes
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_log_request_data_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -163,7 +163,7 @@ static inline uint16_t mavlink_msg_log_request_data_encode_chan(uint8_t system_i
  * @param target_component  Component ID
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes
+ * @param count  Number of bytes
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -284,7 +284,7 @@ static inline uint32_t mavlink_msg_log_request_data_get_ofs(const mavlink_messag
 /**
  * @brief Get field count from log_request_data message
  *
- * @return [bytes] Number of bytes
+ * @return  Number of bytes
  */
 static inline uint32_t mavlink_msg_log_request_data_get_count(const mavlink_message_t* msg)
 {

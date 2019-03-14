@@ -7,7 +7,7 @@ MAVPACKED(
 typedef struct __mavlink_gps_inject_data_t {
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
- uint8_t len; /*< [bytes] data length*/
+ uint8_t len; /*<  data length*/
  uint8_t data[110]; /*<  raw data (110 is enough for 12 satellites of RTCMv2)*/
 }) mavlink_gps_inject_data_t;
 
@@ -52,7 +52,7 @@ typedef struct __mavlink_gps_inject_data_t {
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param len [bytes] data length
+ * @param len  data length
  * @param data  raw data (110 is enough for 12 satellites of RTCMv2)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -87,7 +87,7 @@ static inline uint16_t mavlink_msg_gps_inject_data_pack(uint8_t system_id, uint8
  * @param msg The MAVLink message to compress the data into
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param len [bytes] data length
+ * @param len  data length
  * @param data  raw data (110 is enough for 12 satellites of RTCMv2)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -148,7 +148,7 @@ static inline uint16_t mavlink_msg_gps_inject_data_encode_chan(uint8_t system_id
  *
  * @param target_system  System ID
  * @param target_component  Component ID
- * @param len [bytes] data length
+ * @param len  data length
  * @param data  raw data (110 is enough for 12 satellites of RTCMv2)
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -242,7 +242,7 @@ static inline uint8_t mavlink_msg_gps_inject_data_get_target_component(const mav
 /**
  * @brief Get field len from gps_inject_data message
  *
- * @return [bytes] data length
+ * @return  data length
  */
 static inline uint8_t mavlink_msg_gps_inject_data_get_len(const mavlink_message_t* msg)
 {

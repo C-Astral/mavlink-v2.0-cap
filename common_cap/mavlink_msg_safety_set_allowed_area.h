@@ -5,12 +5,12 @@
 
 MAVPACKED(
 typedef struct __mavlink_safety_set_allowed_area_t {
- float p1x; /*< [m] x position 1 / Latitude 1*/
- float p1y; /*< [m] y position 1 / Longitude 1*/
- float p1z; /*< [m] z position 1 / Altitude 1*/
- float p2x; /*< [m] x position 2 / Latitude 2*/
- float p2y; /*< [m] y position 2 / Longitude 2*/
- float p2z; /*< [m] z position 2 / Altitude 2*/
+ float p1x; /*<  x position 1 / Latitude 1*/
+ float p1y; /*<  y position 1 / Longitude 1*/
+ float p1z; /*<  z position 1 / Altitude 1*/
+ float p2x; /*<  x position 2 / Latitude 2*/
+ float p2y; /*<  y position 2 / Longitude 2*/
+ float p2z; /*<  z position 2 / Altitude 2*/
  uint8_t target_system; /*<  System ID*/
  uint8_t target_component; /*<  Component ID*/
  uint8_t frame; /*<  Coordinate frame, as defined by MAV_FRAME enum in mavlink_types.h. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.*/
@@ -68,12 +68,12 @@ typedef struct __mavlink_safety_set_allowed_area_t {
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param frame  Coordinate frame, as defined by MAV_FRAME enum in mavlink_types.h. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
- * @param p1x [m] x position 1 / Latitude 1
- * @param p1y [m] y position 1 / Longitude 1
- * @param p1z [m] z position 1 / Altitude 1
- * @param p2x [m] x position 2 / Latitude 2
- * @param p2y [m] y position 2 / Longitude 2
- * @param p2z [m] z position 2 / Altitude 2
+ * @param p1x  x position 1 / Latitude 1
+ * @param p1y  y position 1 / Longitude 1
+ * @param p1z  z position 1 / Altitude 1
+ * @param p2x  x position 2 / Latitude 2
+ * @param p2y  y position 2 / Longitude 2
+ * @param p2z  z position 2 / Altitude 2
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_safety_set_allowed_area_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -120,12 +120,12 @@ static inline uint16_t mavlink_msg_safety_set_allowed_area_pack(uint8_t system_i
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param frame  Coordinate frame, as defined by MAV_FRAME enum in mavlink_types.h. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
- * @param p1x [m] x position 1 / Latitude 1
- * @param p1y [m] y position 1 / Longitude 1
- * @param p1z [m] z position 1 / Altitude 1
- * @param p2x [m] x position 2 / Latitude 2
- * @param p2y [m] y position 2 / Longitude 2
- * @param p2z [m] z position 2 / Altitude 2
+ * @param p1x  x position 1 / Latitude 1
+ * @param p1y  y position 1 / Longitude 1
+ * @param p1z  z position 1 / Altitude 1
+ * @param p2x  x position 2 / Latitude 2
+ * @param p2y  y position 2 / Longitude 2
+ * @param p2z  z position 2 / Altitude 2
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_safety_set_allowed_area_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -198,12 +198,12 @@ static inline uint16_t mavlink_msg_safety_set_allowed_area_encode_chan(uint8_t s
  * @param target_system  System ID
  * @param target_component  Component ID
  * @param frame  Coordinate frame, as defined by MAV_FRAME enum in mavlink_types.h. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.
- * @param p1x [m] x position 1 / Latitude 1
- * @param p1y [m] y position 1 / Longitude 1
- * @param p1z [m] z position 1 / Altitude 1
- * @param p2x [m] x position 2 / Latitude 2
- * @param p2y [m] y position 2 / Longitude 2
- * @param p2z [m] z position 2 / Altitude 2
+ * @param p1x  x position 1 / Latitude 1
+ * @param p1y  y position 1 / Longitude 1
+ * @param p1z  z position 1 / Altitude 1
+ * @param p2x  x position 2 / Latitude 2
+ * @param p2y  y position 2 / Longitude 2
+ * @param p2z  z position 2 / Altitude 2
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -330,7 +330,7 @@ static inline uint8_t mavlink_msg_safety_set_allowed_area_get_frame(const mavlin
 /**
  * @brief Get field p1x from safety_set_allowed_area message
  *
- * @return [m] x position 1 / Latitude 1
+ * @return  x position 1 / Latitude 1
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p1x(const mavlink_message_t* msg)
 {
@@ -340,7 +340,7 @@ static inline float mavlink_msg_safety_set_allowed_area_get_p1x(const mavlink_me
 /**
  * @brief Get field p1y from safety_set_allowed_area message
  *
- * @return [m] y position 1 / Longitude 1
+ * @return  y position 1 / Longitude 1
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p1y(const mavlink_message_t* msg)
 {
@@ -350,7 +350,7 @@ static inline float mavlink_msg_safety_set_allowed_area_get_p1y(const mavlink_me
 /**
  * @brief Get field p1z from safety_set_allowed_area message
  *
- * @return [m] z position 1 / Altitude 1
+ * @return  z position 1 / Altitude 1
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p1z(const mavlink_message_t* msg)
 {
@@ -360,7 +360,7 @@ static inline float mavlink_msg_safety_set_allowed_area_get_p1z(const mavlink_me
 /**
  * @brief Get field p2x from safety_set_allowed_area message
  *
- * @return [m] x position 2 / Latitude 2
+ * @return  x position 2 / Latitude 2
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p2x(const mavlink_message_t* msg)
 {
@@ -370,7 +370,7 @@ static inline float mavlink_msg_safety_set_allowed_area_get_p2x(const mavlink_me
 /**
  * @brief Get field p2y from safety_set_allowed_area message
  *
- * @return [m] y position 2 / Longitude 2
+ * @return  y position 2 / Longitude 2
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p2y(const mavlink_message_t* msg)
 {
@@ -380,7 +380,7 @@ static inline float mavlink_msg_safety_set_allowed_area_get_p2y(const mavlink_me
 /**
  * @brief Get field p2z from safety_set_allowed_area message
  *
- * @return [m] z position 2 / Altitude 2
+ * @return  z position 2 / Altitude 2
  */
 static inline float mavlink_msg_safety_set_allowed_area_get_p2z(const mavlink_message_t* msg)
 {

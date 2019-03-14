@@ -6,10 +6,10 @@
 MAVPACKED(
 typedef struct __mavlink_serial_control_t {
  uint32_t baudrate; /*<  Baudrate of transfer. Zero means no change.*/
- uint16_t timeout; /*< [ms] Timeout for reply data in milliseconds*/
+ uint16_t timeout; /*<  Timeout for reply data in milliseconds*/
  uint8_t device; /*<  See SERIAL_CONTROL_DEV enum*/
  uint8_t flags; /*<  See SERIAL_CONTROL_FLAG enum*/
- uint8_t count; /*< [bytes] how many bytes in this transfer*/
+ uint8_t count; /*<  how many bytes in this transfer*/
  uint8_t data[70]; /*<  serial data*/
 }) mavlink_serial_control_t;
 
@@ -58,9 +58,9 @@ typedef struct __mavlink_serial_control_t {
  *
  * @param device  See SERIAL_CONTROL_DEV enum
  * @param flags  See SERIAL_CONTROL_FLAG enum
- * @param timeout [ms] Timeout for reply data in milliseconds
+ * @param timeout  Timeout for reply data in milliseconds
  * @param baudrate  Baudrate of transfer. Zero means no change.
- * @param count [bytes] how many bytes in this transfer
+ * @param count  how many bytes in this transfer
  * @param data  serial data
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -99,9 +99,9 @@ static inline uint16_t mavlink_msg_serial_control_pack(uint8_t system_id, uint8_
  * @param msg The MAVLink message to compress the data into
  * @param device  See SERIAL_CONTROL_DEV enum
  * @param flags  See SERIAL_CONTROL_FLAG enum
- * @param timeout [ms] Timeout for reply data in milliseconds
+ * @param timeout  Timeout for reply data in milliseconds
  * @param baudrate  Baudrate of transfer. Zero means no change.
- * @param count [bytes] how many bytes in this transfer
+ * @param count  how many bytes in this transfer
  * @param data  serial data
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -166,9 +166,9 @@ static inline uint16_t mavlink_msg_serial_control_encode_chan(uint8_t system_id,
  *
  * @param device  See SERIAL_CONTROL_DEV enum
  * @param flags  See SERIAL_CONTROL_FLAG enum
- * @param timeout [ms] Timeout for reply data in milliseconds
+ * @param timeout  Timeout for reply data in milliseconds
  * @param baudrate  Baudrate of transfer. Zero means no change.
- * @param count [bytes] how many bytes in this transfer
+ * @param count  how many bytes in this transfer
  * @param data  serial data
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -270,7 +270,7 @@ static inline uint8_t mavlink_msg_serial_control_get_flags(const mavlink_message
 /**
  * @brief Get field timeout from serial_control message
  *
- * @return [ms] Timeout for reply data in milliseconds
+ * @return  Timeout for reply data in milliseconds
  */
 static inline uint16_t mavlink_msg_serial_control_get_timeout(const mavlink_message_t* msg)
 {
@@ -290,7 +290,7 @@ static inline uint32_t mavlink_msg_serial_control_get_baudrate(const mavlink_mes
 /**
  * @brief Get field count from serial_control message
  *
- * @return [bytes] how many bytes in this transfer
+ * @return  how many bytes in this transfer
  */
 static inline uint8_t mavlink_msg_serial_control_get_count(const mavlink_message_t* msg)
 {

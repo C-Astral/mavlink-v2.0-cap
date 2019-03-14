@@ -5,7 +5,7 @@
 
 MAVPACKED(
 typedef struct __mavlink_raw_pressure_t {
- uint64_t time_usec; /*< [us] Timestamp (microseconds since UNIX epoch or microseconds since system boot)*/
+ uint64_t time_usec; /*<  Timestamp (microseconds since UNIX epoch or microseconds since system boot)*/
  int16_t press_abs; /*<  Absolute pressure (raw)*/
  int16_t press_diff1; /*<  Differential pressure 1 (raw, 0 if nonexistant)*/
  int16_t press_diff2; /*<  Differential pressure 2 (raw, 0 if nonexistant)*/
@@ -53,7 +53,7 @@ typedef struct __mavlink_raw_pressure_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param time_usec [us] Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+ * @param time_usec  Timestamp (microseconds since UNIX epoch or microseconds since system boot)
  * @param press_abs  Absolute pressure (raw)
  * @param press_diff1  Differential pressure 1 (raw, 0 if nonexistant)
  * @param press_diff2  Differential pressure 2 (raw, 0 if nonexistant)
@@ -93,7 +93,7 @@ static inline uint16_t mavlink_msg_raw_pressure_pack(uint8_t system_id, uint8_t 
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param time_usec [us] Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+ * @param time_usec  Timestamp (microseconds since UNIX epoch or microseconds since system boot)
  * @param press_abs  Absolute pressure (raw)
  * @param press_diff1  Differential pressure 1 (raw, 0 if nonexistant)
  * @param press_diff2  Differential pressure 2 (raw, 0 if nonexistant)
@@ -159,7 +159,7 @@ static inline uint16_t mavlink_msg_raw_pressure_encode_chan(uint8_t system_id, u
  * @brief Send a raw_pressure message
  * @param chan MAVLink channel to send the message
  *
- * @param time_usec [us] Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+ * @param time_usec  Timestamp (microseconds since UNIX epoch or microseconds since system boot)
  * @param press_abs  Absolute pressure (raw)
  * @param press_diff1  Differential pressure 1 (raw, 0 if nonexistant)
  * @param press_diff2  Differential pressure 2 (raw, 0 if nonexistant)
@@ -244,7 +244,7 @@ static inline void mavlink_msg_raw_pressure_send_buf(mavlink_message_t *msgbuf, 
 /**
  * @brief Get field time_usec from raw_pressure message
  *
- * @return [us] Timestamp (microseconds since UNIX epoch or microseconds since system boot)
+ * @return  Timestamp (microseconds since UNIX epoch or microseconds since system boot)
  */
 static inline uint64_t mavlink_msg_raw_pressure_get_time_usec(const mavlink_message_t* msg)
 {

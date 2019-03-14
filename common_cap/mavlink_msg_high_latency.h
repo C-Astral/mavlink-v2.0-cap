@@ -6,27 +6,27 @@
 MAVPACKED(
 typedef struct __mavlink_high_latency_t {
  uint32_t custom_mode; /*<  A bitfield for use for autopilot-specific flags.*/
- int32_t latitude; /*< [degE7] Latitude, expressed as degrees * 1E7*/
- int32_t longitude; /*< [degE7] Longitude, expressed as degrees * 1E7*/
- int16_t roll; /*< [cdeg] roll (centidegrees)*/
- int16_t pitch; /*< [cdeg] pitch (centidegrees)*/
- uint16_t heading; /*< [cdeg] heading (centidegrees)*/
- int16_t heading_sp; /*< [cdeg] heading setpoint (centidegrees)*/
- int16_t altitude_amsl; /*< [m] Altitude above mean sea level (meters)*/
- int16_t altitude_sp; /*< [m] Altitude setpoint relative to the home position (meters)*/
- uint16_t wp_distance; /*< [m] distance to target (meters)*/
+ int32_t latitude; /*<  Latitude, expressed as degrees * 1E7*/
+ int32_t longitude; /*<  Longitude, expressed as degrees * 1E7*/
+ int16_t roll; /*<  roll (centidegrees)*/
+ int16_t pitch; /*<  pitch (centidegrees)*/
+ uint16_t heading; /*<  heading (centidegrees)*/
+ int16_t heading_sp; /*<  heading setpoint (centidegrees)*/
+ int16_t altitude_amsl; /*<  Altitude above mean sea level (meters)*/
+ int16_t altitude_sp; /*<  Altitude setpoint relative to the home position (meters)*/
+ uint16_t wp_distance; /*<  distance to target (meters)*/
  uint8_t base_mode; /*<  System mode bitfield, see MAV_MODE_FLAG ENUM in mavlink/include/mavlink_types.h*/
  uint8_t landed_state; /*<  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.*/
- int8_t throttle; /*< [%] throttle (percentage)*/
- uint8_t airspeed; /*< [m/s] airspeed (m/s)*/
- uint8_t airspeed_sp; /*< [m/s] airspeed setpoint (m/s)*/
- uint8_t groundspeed; /*< [m/s] groundspeed (m/s)*/
- int8_t climb_rate; /*< [m/s] climb rate (m/s)*/
+ int8_t throttle; /*<  throttle (percentage)*/
+ uint8_t airspeed; /*<  airspeed (m/s)*/
+ uint8_t airspeed_sp; /*<  airspeed setpoint (m/s)*/
+ uint8_t groundspeed; /*<  groundspeed (m/s)*/
+ int8_t climb_rate; /*<  climb rate (m/s)*/
  uint8_t gps_nsat; /*<  Number of satellites visible. If unknown, set to 255*/
  uint8_t gps_fix_type; /*<  See the GPS_FIX_TYPE enum.*/
- uint8_t battery_remaining; /*< [%] Remaining battery (percentage)*/
- int8_t temperature; /*< [degC] Autopilot temperature (degrees C)*/
- int8_t temperature_air; /*< [degC] Air temperature (degrees C) from airspeed sensor*/
+ uint8_t battery_remaining; /*<  Remaining battery (percentage)*/
+ int8_t temperature; /*<  Autopilot temperature (degrees C)*/
+ int8_t temperature_air; /*<  Air temperature (degrees C) from airspeed sensor*/
  uint8_t failsafe; /*<  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)*/
  uint8_t wp_num; /*<  current waypoint number*/
 }) mavlink_high_latency_t;
@@ -113,27 +113,27 @@ typedef struct __mavlink_high_latency_t {
  * @param base_mode  System mode bitfield, see MAV_MODE_FLAG ENUM in mavlink/include/mavlink_types.h
  * @param custom_mode  A bitfield for use for autopilot-specific flags.
  * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param roll [cdeg] roll (centidegrees)
- * @param pitch [cdeg] pitch (centidegrees)
- * @param heading [cdeg] heading (centidegrees)
- * @param throttle [%] throttle (percentage)
- * @param heading_sp [cdeg] heading setpoint (centidegrees)
- * @param latitude [degE7] Latitude, expressed as degrees * 1E7
- * @param longitude [degE7] Longitude, expressed as degrees * 1E7
- * @param altitude_amsl [m] Altitude above mean sea level (meters)
- * @param altitude_sp [m] Altitude setpoint relative to the home position (meters)
- * @param airspeed [m/s] airspeed (m/s)
- * @param airspeed_sp [m/s] airspeed setpoint (m/s)
- * @param groundspeed [m/s] groundspeed (m/s)
- * @param climb_rate [m/s] climb rate (m/s)
+ * @param roll  roll (centidegrees)
+ * @param pitch  pitch (centidegrees)
+ * @param heading  heading (centidegrees)
+ * @param throttle  throttle (percentage)
+ * @param heading_sp  heading setpoint (centidegrees)
+ * @param latitude  Latitude, expressed as degrees * 1E7
+ * @param longitude  Longitude, expressed as degrees * 1E7
+ * @param altitude_amsl  Altitude above mean sea level (meters)
+ * @param altitude_sp  Altitude setpoint relative to the home position (meters)
+ * @param airspeed  airspeed (m/s)
+ * @param airspeed_sp  airspeed setpoint (m/s)
+ * @param groundspeed  groundspeed (m/s)
+ * @param climb_rate  climb rate (m/s)
  * @param gps_nsat  Number of satellites visible. If unknown, set to 255
  * @param gps_fix_type  See the GPS_FIX_TYPE enum.
- * @param battery_remaining [%] Remaining battery (percentage)
- * @param temperature [degC] Autopilot temperature (degrees C)
- * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
+ * @param battery_remaining  Remaining battery (percentage)
+ * @param temperature  Autopilot temperature (degrees C)
+ * @param temperature_air  Air temperature (degrees C) from airspeed sensor
  * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
  * @param wp_num  current waypoint number
- * @param wp_distance [m] distance to target (meters)
+ * @param wp_distance  distance to target (meters)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_high_latency_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -210,27 +210,27 @@ static inline uint16_t mavlink_msg_high_latency_pack(uint8_t system_id, uint8_t 
  * @param base_mode  System mode bitfield, see MAV_MODE_FLAG ENUM in mavlink/include/mavlink_types.h
  * @param custom_mode  A bitfield for use for autopilot-specific flags.
  * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param roll [cdeg] roll (centidegrees)
- * @param pitch [cdeg] pitch (centidegrees)
- * @param heading [cdeg] heading (centidegrees)
- * @param throttle [%] throttle (percentage)
- * @param heading_sp [cdeg] heading setpoint (centidegrees)
- * @param latitude [degE7] Latitude, expressed as degrees * 1E7
- * @param longitude [degE7] Longitude, expressed as degrees * 1E7
- * @param altitude_amsl [m] Altitude above mean sea level (meters)
- * @param altitude_sp [m] Altitude setpoint relative to the home position (meters)
- * @param airspeed [m/s] airspeed (m/s)
- * @param airspeed_sp [m/s] airspeed setpoint (m/s)
- * @param groundspeed [m/s] groundspeed (m/s)
- * @param climb_rate [m/s] climb rate (m/s)
+ * @param roll  roll (centidegrees)
+ * @param pitch  pitch (centidegrees)
+ * @param heading  heading (centidegrees)
+ * @param throttle  throttle (percentage)
+ * @param heading_sp  heading setpoint (centidegrees)
+ * @param latitude  Latitude, expressed as degrees * 1E7
+ * @param longitude  Longitude, expressed as degrees * 1E7
+ * @param altitude_amsl  Altitude above mean sea level (meters)
+ * @param altitude_sp  Altitude setpoint relative to the home position (meters)
+ * @param airspeed  airspeed (m/s)
+ * @param airspeed_sp  airspeed setpoint (m/s)
+ * @param groundspeed  groundspeed (m/s)
+ * @param climb_rate  climb rate (m/s)
  * @param gps_nsat  Number of satellites visible. If unknown, set to 255
  * @param gps_fix_type  See the GPS_FIX_TYPE enum.
- * @param battery_remaining [%] Remaining battery (percentage)
- * @param temperature [degC] Autopilot temperature (degrees C)
- * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
+ * @param battery_remaining  Remaining battery (percentage)
+ * @param temperature  Autopilot temperature (degrees C)
+ * @param temperature_air  Air temperature (degrees C) from airspeed sensor
  * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
  * @param wp_num  current waypoint number
- * @param wp_distance [m] distance to target (meters)
+ * @param wp_distance  distance to target (meters)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_high_latency_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -333,27 +333,27 @@ static inline uint16_t mavlink_msg_high_latency_encode_chan(uint8_t system_id, u
  * @param base_mode  System mode bitfield, see MAV_MODE_FLAG ENUM in mavlink/include/mavlink_types.h
  * @param custom_mode  A bitfield for use for autopilot-specific flags.
  * @param landed_state  The landed state. Is set to MAV_LANDED_STATE_UNDEFINED if landed state is unknown.
- * @param roll [cdeg] roll (centidegrees)
- * @param pitch [cdeg] pitch (centidegrees)
- * @param heading [cdeg] heading (centidegrees)
- * @param throttle [%] throttle (percentage)
- * @param heading_sp [cdeg] heading setpoint (centidegrees)
- * @param latitude [degE7] Latitude, expressed as degrees * 1E7
- * @param longitude [degE7] Longitude, expressed as degrees * 1E7
- * @param altitude_amsl [m] Altitude above mean sea level (meters)
- * @param altitude_sp [m] Altitude setpoint relative to the home position (meters)
- * @param airspeed [m/s] airspeed (m/s)
- * @param airspeed_sp [m/s] airspeed setpoint (m/s)
- * @param groundspeed [m/s] groundspeed (m/s)
- * @param climb_rate [m/s] climb rate (m/s)
+ * @param roll  roll (centidegrees)
+ * @param pitch  pitch (centidegrees)
+ * @param heading  heading (centidegrees)
+ * @param throttle  throttle (percentage)
+ * @param heading_sp  heading setpoint (centidegrees)
+ * @param latitude  Latitude, expressed as degrees * 1E7
+ * @param longitude  Longitude, expressed as degrees * 1E7
+ * @param altitude_amsl  Altitude above mean sea level (meters)
+ * @param altitude_sp  Altitude setpoint relative to the home position (meters)
+ * @param airspeed  airspeed (m/s)
+ * @param airspeed_sp  airspeed setpoint (m/s)
+ * @param groundspeed  groundspeed (m/s)
+ * @param climb_rate  climb rate (m/s)
  * @param gps_nsat  Number of satellites visible. If unknown, set to 255
  * @param gps_fix_type  See the GPS_FIX_TYPE enum.
- * @param battery_remaining [%] Remaining battery (percentage)
- * @param temperature [degC] Autopilot temperature (degrees C)
- * @param temperature_air [degC] Air temperature (degrees C) from airspeed sensor
+ * @param battery_remaining  Remaining battery (percentage)
+ * @param temperature  Autopilot temperature (degrees C)
+ * @param temperature_air  Air temperature (degrees C) from airspeed sensor
  * @param failsafe  failsafe (each bit represents a failsafe where 0=ok, 1=failsafe active (bit0:RC, bit1:batt, bit2:GPS, bit3:GCS, bit4:fence)
  * @param wp_num  current waypoint number
- * @param wp_distance [m] distance to target (meters)
+ * @param wp_distance  distance to target (meters)
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -540,7 +540,7 @@ static inline uint8_t mavlink_msg_high_latency_get_landed_state(const mavlink_me
 /**
  * @brief Get field roll from high_latency message
  *
- * @return [cdeg] roll (centidegrees)
+ * @return  roll (centidegrees)
  */
 static inline int16_t mavlink_msg_high_latency_get_roll(const mavlink_message_t* msg)
 {
@@ -550,7 +550,7 @@ static inline int16_t mavlink_msg_high_latency_get_roll(const mavlink_message_t*
 /**
  * @brief Get field pitch from high_latency message
  *
- * @return [cdeg] pitch (centidegrees)
+ * @return  pitch (centidegrees)
  */
 static inline int16_t mavlink_msg_high_latency_get_pitch(const mavlink_message_t* msg)
 {
@@ -560,7 +560,7 @@ static inline int16_t mavlink_msg_high_latency_get_pitch(const mavlink_message_t
 /**
  * @brief Get field heading from high_latency message
  *
- * @return [cdeg] heading (centidegrees)
+ * @return  heading (centidegrees)
  */
 static inline uint16_t mavlink_msg_high_latency_get_heading(const mavlink_message_t* msg)
 {
@@ -570,7 +570,7 @@ static inline uint16_t mavlink_msg_high_latency_get_heading(const mavlink_messag
 /**
  * @brief Get field throttle from high_latency message
  *
- * @return [%] throttle (percentage)
+ * @return  throttle (percentage)
  */
 static inline int8_t mavlink_msg_high_latency_get_throttle(const mavlink_message_t* msg)
 {
@@ -580,7 +580,7 @@ static inline int8_t mavlink_msg_high_latency_get_throttle(const mavlink_message
 /**
  * @brief Get field heading_sp from high_latency message
  *
- * @return [cdeg] heading setpoint (centidegrees)
+ * @return  heading setpoint (centidegrees)
  */
 static inline int16_t mavlink_msg_high_latency_get_heading_sp(const mavlink_message_t* msg)
 {
@@ -590,7 +590,7 @@ static inline int16_t mavlink_msg_high_latency_get_heading_sp(const mavlink_mess
 /**
  * @brief Get field latitude from high_latency message
  *
- * @return [degE7] Latitude, expressed as degrees * 1E7
+ * @return  Latitude, expressed as degrees * 1E7
  */
 static inline int32_t mavlink_msg_high_latency_get_latitude(const mavlink_message_t* msg)
 {
@@ -600,7 +600,7 @@ static inline int32_t mavlink_msg_high_latency_get_latitude(const mavlink_messag
 /**
  * @brief Get field longitude from high_latency message
  *
- * @return [degE7] Longitude, expressed as degrees * 1E7
+ * @return  Longitude, expressed as degrees * 1E7
  */
 static inline int32_t mavlink_msg_high_latency_get_longitude(const mavlink_message_t* msg)
 {
@@ -610,7 +610,7 @@ static inline int32_t mavlink_msg_high_latency_get_longitude(const mavlink_messa
 /**
  * @brief Get field altitude_amsl from high_latency message
  *
- * @return [m] Altitude above mean sea level (meters)
+ * @return  Altitude above mean sea level (meters)
  */
 static inline int16_t mavlink_msg_high_latency_get_altitude_amsl(const mavlink_message_t* msg)
 {
@@ -620,7 +620,7 @@ static inline int16_t mavlink_msg_high_latency_get_altitude_amsl(const mavlink_m
 /**
  * @brief Get field altitude_sp from high_latency message
  *
- * @return [m] Altitude setpoint relative to the home position (meters)
+ * @return  Altitude setpoint relative to the home position (meters)
  */
 static inline int16_t mavlink_msg_high_latency_get_altitude_sp(const mavlink_message_t* msg)
 {
@@ -630,7 +630,7 @@ static inline int16_t mavlink_msg_high_latency_get_altitude_sp(const mavlink_mes
 /**
  * @brief Get field airspeed from high_latency message
  *
- * @return [m/s] airspeed (m/s)
+ * @return  airspeed (m/s)
  */
 static inline uint8_t mavlink_msg_high_latency_get_airspeed(const mavlink_message_t* msg)
 {
@@ -640,7 +640,7 @@ static inline uint8_t mavlink_msg_high_latency_get_airspeed(const mavlink_messag
 /**
  * @brief Get field airspeed_sp from high_latency message
  *
- * @return [m/s] airspeed setpoint (m/s)
+ * @return  airspeed setpoint (m/s)
  */
 static inline uint8_t mavlink_msg_high_latency_get_airspeed_sp(const mavlink_message_t* msg)
 {
@@ -650,7 +650,7 @@ static inline uint8_t mavlink_msg_high_latency_get_airspeed_sp(const mavlink_mes
 /**
  * @brief Get field groundspeed from high_latency message
  *
- * @return [m/s] groundspeed (m/s)
+ * @return  groundspeed (m/s)
  */
 static inline uint8_t mavlink_msg_high_latency_get_groundspeed(const mavlink_message_t* msg)
 {
@@ -660,7 +660,7 @@ static inline uint8_t mavlink_msg_high_latency_get_groundspeed(const mavlink_mes
 /**
  * @brief Get field climb_rate from high_latency message
  *
- * @return [m/s] climb rate (m/s)
+ * @return  climb rate (m/s)
  */
 static inline int8_t mavlink_msg_high_latency_get_climb_rate(const mavlink_message_t* msg)
 {
@@ -690,7 +690,7 @@ static inline uint8_t mavlink_msg_high_latency_get_gps_fix_type(const mavlink_me
 /**
  * @brief Get field battery_remaining from high_latency message
  *
- * @return [%] Remaining battery (percentage)
+ * @return  Remaining battery (percentage)
  */
 static inline uint8_t mavlink_msg_high_latency_get_battery_remaining(const mavlink_message_t* msg)
 {
@@ -700,7 +700,7 @@ static inline uint8_t mavlink_msg_high_latency_get_battery_remaining(const mavli
 /**
  * @brief Get field temperature from high_latency message
  *
- * @return [degC] Autopilot temperature (degrees C)
+ * @return  Autopilot temperature (degrees C)
  */
 static inline int8_t mavlink_msg_high_latency_get_temperature(const mavlink_message_t* msg)
 {
@@ -710,7 +710,7 @@ static inline int8_t mavlink_msg_high_latency_get_temperature(const mavlink_mess
 /**
  * @brief Get field temperature_air from high_latency message
  *
- * @return [degC] Air temperature (degrees C) from airspeed sensor
+ * @return  Air temperature (degrees C) from airspeed sensor
  */
 static inline int8_t mavlink_msg_high_latency_get_temperature_air(const mavlink_message_t* msg)
 {
@@ -740,7 +740,7 @@ static inline uint8_t mavlink_msg_high_latency_get_wp_num(const mavlink_message_
 /**
  * @brief Get field wp_distance from high_latency message
  *
- * @return [m] distance to target (meters)
+ * @return  distance to target (meters)
  */
 static inline uint16_t mavlink_msg_high_latency_get_wp_distance(const mavlink_message_t* msg)
 {

@@ -7,7 +7,7 @@ MAVPACKED(
 typedef struct __mavlink_log_data_t {
  uint32_t ofs; /*<  Offset into the log*/
  uint16_t id; /*<  Log id (from LOG_ENTRY reply)*/
- uint8_t count; /*< [bytes] Number of bytes (zero for end of log)*/
+ uint8_t count; /*<  Number of bytes (zero for end of log)*/
  uint8_t data[90]; /*<  log data*/
 }) mavlink_log_data_t;
 
@@ -52,7 +52,7 @@ typedef struct __mavlink_log_data_t {
  *
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes (zero for end of log)
+ * @param count  Number of bytes (zero for end of log)
  * @param data  log data
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -87,7 +87,7 @@ static inline uint16_t mavlink_msg_log_data_pack(uint8_t system_id, uint8_t comp
  * @param msg The MAVLink message to compress the data into
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes (zero for end of log)
+ * @param count  Number of bytes (zero for end of log)
  * @param data  log data
  * @return length of the message in bytes (excluding serial stream start sign)
  */
@@ -148,7 +148,7 @@ static inline uint16_t mavlink_msg_log_data_encode_chan(uint8_t system_id, uint8
  *
  * @param id  Log id (from LOG_ENTRY reply)
  * @param ofs  Offset into the log
- * @param count [bytes] Number of bytes (zero for end of log)
+ * @param count  Number of bytes (zero for end of log)
  * @param data  log data
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
@@ -242,7 +242,7 @@ static inline uint32_t mavlink_msg_log_data_get_ofs(const mavlink_message_t* msg
 /**
  * @brief Get field count from log_data message
  *
- * @return [bytes] Number of bytes (zero for end of log)
+ * @return  Number of bytes (zero for end of log)
  */
 static inline uint8_t mavlink_msg_log_data_get_count(const mavlink_message_t* msg)
 {

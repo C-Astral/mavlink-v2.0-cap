@@ -8,16 +8,16 @@ typedef struct __mavlink_sys_status_t {
  uint32_t onboard_control_sensors_present; /*<  Bitmask showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present. Indices defined by ENUM MAV_SYS_STATUS_SENSOR*/
  uint32_t onboard_control_sensors_enabled; /*<  Bitmask showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR*/
  uint32_t onboard_control_sensors_health; /*<  Bitmask showing which onboard controllers and sensors are operational or have an error:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR*/
- uint16_t load; /*< [d%] Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000*/
- uint16_t voltage_battery; /*< [mV] Battery voltage, in millivolts (1 = 1 millivolt)*/
- int16_t current_battery; /*< [cA] Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current*/
- uint16_t drop_rate_comm; /*< [c%] Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)*/
+ uint16_t load; /*<  Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000*/
+ uint16_t voltage_battery; /*<  Battery voltage, in millivolts (1 = 1 millivolt)*/
+ int16_t current_battery; /*<  Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current*/
+ uint16_t drop_rate_comm; /*<  Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)*/
  uint16_t errors_comm; /*<  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)*/
  uint16_t errors_count1; /*<  Autopilot-specific errors*/
  uint16_t errors_count2; /*<  Autopilot-specific errors*/
  uint16_t errors_count3; /*<  Autopilot-specific errors*/
  uint16_t errors_count4; /*<  Autopilot-specific errors*/
- int8_t battery_remaining; /*< [%] Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery*/
+ int8_t battery_remaining; /*<  Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery*/
 }) mavlink_sys_status_t;
 
 #define MAVLINK_MSG_ID_SYS_STATUS_LEN 31
@@ -80,11 +80,11 @@ typedef struct __mavlink_sys_status_t {
  * @param onboard_control_sensors_present  Bitmask showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_enabled  Bitmask showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_health  Bitmask showing which onboard controllers and sensors are operational or have an error:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
- * @param load [d%] Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
- * @param voltage_battery [mV] Battery voltage, in millivolts (1 = 1 millivolt)
- * @param current_battery [cA] Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
- * @param battery_remaining [%] Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
- * @param drop_rate_comm [c%] Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param load  Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
+ * @param voltage_battery  Battery voltage, in millivolts (1 = 1 millivolt)
+ * @param current_battery  Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
+ * @param battery_remaining  Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
+ * @param drop_rate_comm  Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
@@ -144,11 +144,11 @@ static inline uint16_t mavlink_msg_sys_status_pack(uint8_t system_id, uint8_t co
  * @param onboard_control_sensors_present  Bitmask showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_enabled  Bitmask showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_health  Bitmask showing which onboard controllers and sensors are operational or have an error:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
- * @param load [d%] Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
- * @param voltage_battery [mV] Battery voltage, in millivolts (1 = 1 millivolt)
- * @param current_battery [cA] Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
- * @param battery_remaining [%] Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
- * @param drop_rate_comm [c%] Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param load  Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
+ * @param voltage_battery  Battery voltage, in millivolts (1 = 1 millivolt)
+ * @param current_battery  Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
+ * @param battery_remaining  Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
+ * @param drop_rate_comm  Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
@@ -234,11 +234,11 @@ static inline uint16_t mavlink_msg_sys_status_encode_chan(uint8_t system_id, uin
  * @param onboard_control_sensors_present  Bitmask showing which onboard controllers and sensors are present. Value of 0: not present. Value of 1: present. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_enabled  Bitmask showing which onboard controllers and sensors are enabled:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
  * @param onboard_control_sensors_health  Bitmask showing which onboard controllers and sensors are operational or have an error:  Value of 0: not enabled. Value of 1: enabled. Indices defined by ENUM MAV_SYS_STATUS_SENSOR
- * @param load [d%] Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
- * @param voltage_battery [mV] Battery voltage, in millivolts (1 = 1 millivolt)
- * @param current_battery [cA] Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
- * @param battery_remaining [%] Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
- * @param drop_rate_comm [c%] Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @param load  Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
+ * @param voltage_battery  Battery voltage, in millivolts (1 = 1 millivolt)
+ * @param current_battery  Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
+ * @param battery_remaining  Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
+ * @param drop_rate_comm  Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_comm  Communication errors (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  * @param errors_count1  Autopilot-specific errors
  * @param errors_count2  Autopilot-specific errors
@@ -386,7 +386,7 @@ static inline uint32_t mavlink_msg_sys_status_get_onboard_control_sensors_health
 /**
  * @brief Get field load from sys_status message
  *
- * @return [d%] Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
+ * @return  Maximum usage in percent of the mainloop time, (0%: 0, 100%: 1000) should be always below 1000
  */
 static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* msg)
 {
@@ -396,7 +396,7 @@ static inline uint16_t mavlink_msg_sys_status_get_load(const mavlink_message_t* 
 /**
  * @brief Get field voltage_battery from sys_status message
  *
- * @return [mV] Battery voltage, in millivolts (1 = 1 millivolt)
+ * @return  Battery voltage, in millivolts (1 = 1 millivolt)
  */
 static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_message_t* msg)
 {
@@ -406,7 +406,7 @@ static inline uint16_t mavlink_msg_sys_status_get_voltage_battery(const mavlink_
 /**
  * @brief Get field current_battery from sys_status message
  *
- * @return [cA] Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
+ * @return  Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current
  */
 static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_message_t* msg)
 {
@@ -416,7 +416,7 @@ static inline int16_t mavlink_msg_sys_status_get_current_battery(const mavlink_m
 /**
  * @brief Get field battery_remaining from sys_status message
  *
- * @return [%] Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
+ * @return  Remaining battery energy: (0%: 0, 100%: 100), -1: autopilot estimate the remaining battery
  */
 static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_message_t* msg)
 {
@@ -426,7 +426,7 @@ static inline int8_t mavlink_msg_sys_status_get_battery_remaining(const mavlink_
 /**
  * @brief Get field drop_rate_comm from sys_status message
  *
- * @return [c%] Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
+ * @return  Communication drops in percent, (0%: 0, 100%: 10'000), (UART, I2C, SPI, CAN), dropped packets on all links (packets that were corrupted on reception on the MAV)
  */
 static inline uint16_t mavlink_msg_sys_status_get_drop_rate_comm(const mavlink_message_t* msg)
 {

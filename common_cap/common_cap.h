@@ -24,7 +24,7 @@ extern "C" {
 #endif
 
 #ifndef MAVLINK_MESSAGE_CRCS
-#define MAVLINK_MESSAGE_CRCS {{0, 50, 9, 0, 0, 0}, {1, 124, 31, 0, 0, 0}, {2, 137, 12, 0, 0, 0}, {4, 237, 14, 3, 12, 13}, {5, 217, 28, 1, 0, 0}, {6, 104, 3, 0, 0, 0}, {7, 119, 32, 0, 0, 0}, {11, 89, 6, 1, 4, 0}, {20, 214, 20, 3, 2, 3}, {21, 159, 2, 3, 0, 1}, {22, 220, 25, 0, 0, 0}, {23, 168, 23, 3, 4, 5}, {24, 24, 30, 0, 0, 0}, {25, 23, 101, 0, 0, 0}, {26, 170, 22, 0, 0, 0}, {27, 144, 26, 0, 0, 0}, {28, 67, 16, 0, 0, 0}, {29, 115, 14, 0, 0, 0}, {30, 39, 28, 0, 0, 0}, {31, 246, 32, 0, 0, 0}, {32, 185, 28, 0, 0, 0}, {33, 104, 28, 0, 0, 0}, {34, 237, 22, 0, 0, 0}, {35, 244, 22, 0, 0, 0}, {36, 222, 21, 0, 0, 0}, {37, 212, 6, 3, 4, 5}, {38, 9, 6, 3, 4, 5}, {39, 254, 37, 3, 32, 33}, {40, 230, 4, 3, 2, 3}, {41, 28, 4, 3, 2, 3}, {42, 28, 2, 0, 0, 0}, {43, 132, 2, 3, 0, 1}, {44, 221, 4, 3, 2, 3}, {45, 232, 2, 3, 0, 1}, {46, 11, 2, 0, 0, 0}, {47, 153, 3, 3, 0, 1}, {48, 41, 13, 1, 12, 0}, {49, 39, 12, 0, 0, 0}, {50, 78, 37, 3, 18, 19}, {51, 196, 4, 3, 2, 3}, {54, 15, 27, 3, 24, 25}, {55, 3, 25, 0, 0, 0}, {61, 167, 72, 0, 0, 0}, {62, 183, 26, 0, 0, 0}, {63, 119, 181, 0, 0, 0}, {64, 191, 225, 0, 0, 0}, {65, 118, 42, 0, 0, 0}, {66, 148, 6, 3, 2, 3}, {67, 21, 4, 0, 0, 0}, {69, 243, 11, 0, 0, 0}, {70, 124, 18, 3, 16, 17}, {73, 38, 37, 3, 32, 33}, {74, 20, 20, 0, 0, 0}, {75, 158, 35, 3, 30, 31}, {76, 152, 33, 3, 30, 31}, {77, 143, 3, 3, 8, 9}, {81, 106, 22, 0, 0, 0}, {82, 49, 39, 3, 36, 37}, {83, 22, 37, 0, 0, 0}, {84, 143, 53, 3, 50, 51}, {85, 140, 51, 0, 0, 0}, {86, 5, 53, 3, 50, 51}, {87, 150, 51, 0, 0, 0}, {89, 231, 28, 0, 0, 0}, {90, 183, 56, 0, 0, 0}, {91, 63, 42, 0, 0, 0}, {92, 54, 33, 0, 0, 0}, {93, 47, 81, 0, 0, 0}, {100, 175, 26, 0, 0, 0}, {101, 102, 32, 0, 0, 0}, {102, 158, 32, 0, 0, 0}, {103, 208, 20, 0, 0, 0}, {104, 56, 32, 0, 0, 0}, {105, 93, 62, 0, 0, 0}, {106, 138, 44, 0, 0, 0}, {107, 108, 64, 0, 0, 0}, {108, 32, 84, 0, 0, 0}, {109, 185, 9, 0, 0, 0}, {110, 84, 254, 3, 1, 2}, {111, 34, 16, 0, 0, 0}, {112, 174, 12, 0, 0, 0}, {113, 124, 36, 0, 0, 0}, {114, 237, 44, 0, 0, 0}, {115, 4, 64, 0, 0, 0}, {116, 76, 22, 0, 0, 0}, {117, 128, 6, 3, 4, 5}, {118, 56, 14, 0, 0, 0}, {119, 116, 12, 3, 10, 11}, {120, 134, 97, 0, 0, 0}, {121, 237, 2, 3, 0, 1}, {122, 203, 2, 3, 0, 1}, {123, 250, 113, 3, 0, 1}, {124, 87, 35, 0, 0, 0}, {125, 203, 6, 0, 0, 0}, {126, 220, 79, 0, 0, 0}, {127, 25, 35, 0, 0, 0}, {128, 226, 35, 0, 0, 0}, {129, 46, 22, 0, 0, 0}, {130, 29, 13, 0, 0, 0}, {131, 223, 255, 0, 0, 0}, {132, 85, 14, 0, 0, 0}, {133, 6, 18, 0, 0, 0}, {134, 229, 43, 0, 0, 0}, {135, 203, 8, 0, 0, 0}, {136, 1, 22, 0, 0, 0}, {137, 195, 14, 0, 0, 0}, {138, 109, 36, 0, 0, 0}, {139, 168, 43, 3, 41, 42}, {140, 181, 41, 0, 0, 0}, {141, 47, 32, 0, 0, 0}, {142, 72, 243, 0, 0, 0}, {143, 131, 14, 0, 0, 0}, {144, 127, 93, 0, 0, 0}, {146, 103, 100, 0, 0, 0}, {147, 154, 36, 0, 0, 0}, {148, 178, 60, 0, 0, 0}, {149, 200, 30, 0, 0, 0}, {180, 158, 44, 0, 0, 0}, {181, 9, 133, 3, 0, 1}, {182, 50, 4, 3, 0, 1}, {183, 207, 7, 3, 4, 5}, {184, 242, 4, 3, 2, 3}, {230, 163, 42, 0, 0, 0}, {231, 105, 40, 0, 0, 0}, {232, 151, 63, 0, 0, 0}, {233, 35, 182, 0, 0, 0}, {234, 150, 40, 0, 0, 0}, {241, 90, 32, 0, 0, 0}, {242, 104, 52, 0, 0, 0}, {243, 85, 53, 1, 52, 0}, {244, 95, 6, 0, 0, 0}, {245, 130, 2, 0, 0, 0}, {246, 184, 38, 0, 0, 0}, {247, 81, 19, 0, 0, 0}, {248, 8, 254, 3, 3, 4}, {249, 204, 36, 0, 0, 0}, {250, 49, 30, 0, 0, 0}, {251, 170, 18, 0, 0, 0}, {252, 44, 18, 0, 0, 0}, {253, 83, 51, 0, 0, 0}, {254, 46, 9, 0, 0, 0}, {256, 71, 42, 3, 8, 9}, {257, 131, 9, 0, 0, 0}, {258, 187, 32, 3, 0, 1}, {259, 92, 235, 0, 0, 0}, {260, 146, 5, 0, 0, 0}, {261, 179, 27, 0, 0, 0}, {262, 12, 18, 0, 0, 0}, {263, 133, 255, 0, 0, 0}, {264, 49, 28, 0, 0, 0}, {265, 26, 16, 0, 0, 0}, {266, 193, 255, 3, 2, 3}, {267, 35, 255, 3, 2, 3}, {268, 14, 4, 3, 2, 3}, {269, 58, 246, 0, 0, 0}, {270, 232, 247, 3, 14, 15}, {299, 19, 96, 0, 0, 0}, {300, 217, 22, 0, 0, 0}, {310, 28, 17, 0, 0, 0}, {311, 95, 116, 0, 0, 0}, {320, 243, 20, 3, 2, 3}, {321, 88, 2, 3, 0, 1}, {322, 243, 149, 0, 0, 0}, {323, 78, 147, 3, 0, 1}, {324, 132, 146, 0, 0, 0}, {330, 23, 158, 0, 0, 0}}
+#define MAVLINK_MESSAGE_CRCS {{0, 50, 9, 0, 0, 0}, {1, 124, 31, 0, 0, 0}, {2, 137, 12, 0, 0, 0}, {4, 237, 14, 3, 12, 13}, {5, 217, 28, 1, 0, 0}, {6, 104, 3, 0, 0, 0}, {7, 119, 32, 0, 0, 0}, {11, 89, 6, 1, 4, 0}, {20, 214, 20, 3, 2, 3}, {21, 159, 2, 3, 0, 1}, {22, 220, 25, 0, 0, 0}, {23, 168, 23, 3, 4, 5}, {24, 24, 30, 0, 0, 0}, {25, 23, 101, 0, 0, 0}, {26, 170, 22, 0, 0, 0}, {27, 144, 26, 0, 0, 0}, {28, 67, 16, 0, 0, 0}, {29, 115, 14, 0, 0, 0}, {30, 39, 28, 0, 0, 0}, {31, 246, 32, 0, 0, 0}, {32, 185, 28, 0, 0, 0}, {33, 104, 28, 0, 0, 0}, {34, 237, 22, 0, 0, 0}, {35, 244, 22, 0, 0, 0}, {36, 222, 21, 0, 0, 0}, {37, 212, 6, 3, 4, 5}, {38, 9, 6, 3, 4, 5}, {39, 254, 37, 3, 32, 33}, {40, 230, 4, 3, 2, 3}, {41, 28, 4, 3, 2, 3}, {42, 28, 2, 0, 0, 0}, {43, 132, 2, 3, 0, 1}, {44, 221, 4, 3, 2, 3}, {45, 232, 2, 3, 0, 1}, {46, 11, 2, 0, 0, 0}, {47, 153, 3, 3, 0, 1}, {48, 41, 13, 1, 12, 0}, {49, 39, 12, 0, 0, 0}, {50, 78, 37, 3, 18, 19}, {51, 196, 4, 3, 2, 3}, {54, 15, 27, 3, 24, 25}, {55, 3, 25, 0, 0, 0}, {61, 167, 72, 0, 0, 0}, {62, 183, 26, 0, 0, 0}, {63, 119, 181, 0, 0, 0}, {64, 191, 225, 0, 0, 0}, {65, 118, 42, 0, 0, 0}, {66, 148, 6, 3, 2, 3}, {67, 21, 4, 0, 0, 0}, {69, 243, 11, 0, 0, 0}, {70, 124, 18, 3, 16, 17}, {73, 38, 37, 3, 32, 33}, {74, 20, 20, 0, 0, 0}, {75, 158, 35, 3, 30, 31}, {76, 152, 33, 3, 30, 31}, {77, 143, 3, 3, 8, 9}, {81, 106, 22, 0, 0, 0}, {82, 49, 39, 3, 36, 37}, {83, 22, 37, 0, 0, 0}, {84, 143, 53, 3, 50, 51}, {85, 140, 51, 0, 0, 0}, {86, 5, 53, 3, 50, 51}, {87, 150, 51, 0, 0, 0}, {89, 231, 28, 0, 0, 0}, {90, 183, 56, 0, 0, 0}, {91, 63, 42, 0, 0, 0}, {92, 54, 33, 0, 0, 0}, {93, 47, 81, 0, 0, 0}, {100, 175, 26, 0, 0, 0}, {101, 102, 32, 0, 0, 0}, {102, 158, 32, 0, 0, 0}, {103, 208, 20, 0, 0, 0}, {104, 56, 32, 0, 0, 0}, {105, 93, 62, 0, 0, 0}, {106, 138, 44, 0, 0, 0}, {107, 108, 64, 0, 0, 0}, {108, 32, 84, 0, 0, 0}, {109, 185, 9, 0, 0, 0}, {110, 84, 254, 3, 1, 2}, {111, 34, 16, 0, 0, 0}, {112, 174, 12, 0, 0, 0}, {113, 124, 36, 0, 0, 0}, {114, 237, 44, 0, 0, 0}, {115, 4, 64, 0, 0, 0}, {116, 76, 22, 0, 0, 0}, {117, 128, 6, 3, 4, 5}, {118, 56, 14, 0, 0, 0}, {119, 116, 12, 3, 10, 11}, {120, 134, 97, 0, 0, 0}, {121, 237, 2, 3, 0, 1}, {122, 203, 2, 3, 0, 1}, {123, 250, 113, 3, 0, 1}, {124, 87, 35, 0, 0, 0}, {125, 203, 6, 0, 0, 0}, {126, 220, 79, 0, 0, 0}, {127, 25, 35, 0, 0, 0}, {128, 226, 35, 0, 0, 0}, {129, 46, 22, 0, 0, 0}, {130, 29, 13, 0, 0, 0}, {131, 223, 255, 0, 0, 0}, {132, 85, 14, 0, 0, 0}, {133, 6, 18, 0, 0, 0}, {134, 229, 43, 0, 0, 0}, {135, 203, 8, 0, 0, 0}, {136, 1, 22, 0, 0, 0}, {137, 195, 14, 0, 0, 0}, {138, 109, 36, 0, 0, 0}, {139, 168, 43, 3, 41, 42}, {140, 181, 41, 0, 0, 0}, {141, 47, 32, 0, 0, 0}, {142, 72, 243, 0, 0, 0}, {143, 131, 14, 0, 0, 0}, {144, 127, 93, 0, 0, 0}, {146, 103, 100, 0, 0, 0}, {147, 154, 36, 0, 0, 0}, {148, 178, 60, 0, 0, 0}, {149, 200, 30, 0, 0, 0}, {180, 62, 50, 0, 0, 0}, {181, 9, 133, 3, 0, 1}, {182, 50, 4, 3, 0, 1}, {183, 207, 7, 3, 4, 5}, {184, 242, 4, 3, 2, 3}, {230, 163, 42, 0, 0, 0}, {231, 105, 40, 0, 0, 0}, {232, 151, 63, 0, 0, 0}, {233, 35, 182, 0, 0, 0}, {234, 150, 40, 0, 0, 0}, {241, 90, 32, 0, 0, 0}, {242, 104, 52, 0, 0, 0}, {243, 85, 53, 1, 52, 0}, {244, 95, 6, 0, 0, 0}, {245, 130, 2, 0, 0, 0}, {246, 184, 38, 0, 0, 0}, {247, 81, 19, 0, 0, 0}, {248, 249, 10, 0, 0, 0}, {249, 204, 36, 0, 0, 0}, {250, 49, 30, 0, 0, 0}, {251, 170, 18, 0, 0, 0}, {252, 44, 18, 0, 0, 0}, {253, 83, 51, 0, 0, 0}, {254, 46, 9, 0, 0, 0}, {256, 71, 42, 3, 8, 9}, {257, 131, 9, 0, 0, 0}, {258, 187, 32, 3, 0, 1}, {259, 92, 235, 0, 0, 0}, {260, 146, 5, 0, 0, 0}, {261, 179, 27, 0, 0, 0}, {262, 12, 18, 0, 0, 0}, {263, 133, 255, 0, 0, 0}, {264, 49, 28, 0, 0, 0}, {265, 26, 16, 0, 0, 0}, {266, 193, 255, 3, 2, 3}, {267, 35, 255, 3, 2, 3}, {268, 14, 4, 3, 2, 3}, {269, 58, 246, 0, 0, 0}, {270, 232, 247, 3, 14, 15}, {299, 19, 96, 0, 0, 0}, {300, 217, 22, 0, 0, 0}, {310, 28, 17, 0, 0, 0}, {311, 95, 116, 0, 0, 0}, {320, 243, 20, 3, 2, 3}, {321, 88, 2, 3, 0, 1}, {322, 243, 149, 0, 0, 0}, {323, 78, 147, 3, 0, 1}, {324, 132, 146, 0, 0, 0}, {330, 23, 158, 0, 0, 0}}
 #endif
 
 #include "../protocol.h"
@@ -57,8 +57,7 @@ typedef enum MAV_AUTOPILOT
    MAV_AUTOPILOT_ARMAZILA=15, /* Armazila -- http://armazila.com | */
    MAV_AUTOPILOT_AEROB=16, /* Aerob -- http://aerob.ru | */
    MAV_AUTOPILOT_ASLUAV=17, /* ASLUAV autopilot -- http://www.asl.ethz.ch | */
-   MAV_AUTOPILOT_SMARTAP=18, /* SmartAP Autopilot - http://sky-drones.com | */
-   MAV_AUTOPILOT_ENUM_END=19, /*  | */
+   MAV_AUTOPILOT_ENUM_END=18, /*  | */
 } MAV_AUTOPILOT;
 #endif
 
@@ -121,7 +120,7 @@ typedef enum MAV_MODE_FLAG
    MAV_MODE_FLAG_CUSTOM_MODE_ENABLED=1, /* 0b00000001 Reserved for future use. | */
    MAV_MODE_FLAG_TEST_ENABLED=2, /* 0b00000010 system has a test mode enabled. This flag is intended for temporary system tests and should not be used for stable implementations. | */
    MAV_MODE_FLAG_AUTO_ENABLED=4, /* 0b00000100 autonomous mode enabled, system finds its own goal positions. Guided flag can be set or not, depends on the actual implementation. | */
-   MAV_MODE_FLAG_GUIDED_ENABLED=8, /* 0b00001000 guided mode enabled, system flies waypoints / mission items. | */
+   MAV_MODE_FLAG_GUIDED_ENABLED=8, /* 0b00001000 guided mode enabled, system flies MISSIONs / mission items. | */
    MAV_MODE_FLAG_STABILIZE_ENABLED=16, /* 0b00010000 system stabilizes electronically its attitude (and optionally position). It needs however further control inputs to move around. | */
    MAV_MODE_FLAG_HIL_ENABLED=32, /* 0b00100000 hardware in the loop simulation. All motors / actuators are blocked, but internal software is full operational. | */
    MAV_MODE_FLAG_MANUAL_INPUT_ENABLED=64, /* 0b01000000 remote control input is enabled. | */
@@ -160,8 +159,10 @@ typedef enum MAV_GOTO
 } MAV_GOTO;
 #endif
 
-/** @brief These defines are predefined OR-combined mode flags. There is no need to use values from this enum, but it
-               simplifies the use of the mode flags. Note that manual input is enabled in all modes as a safety override. */
+/** @brief 
+        These defines are predefined OR-combined mode flags. There is no need to use values from this enum, but it
+        simplifies the use of the mode flags. Note that manual input is enabled in all modes as a safety override.
+       */
 #ifndef HAVE_ENUM_MAV_MODE
 #define HAVE_ENUM_MAV_MODE
 typedef enum MAV_MODE
@@ -171,12 +172,12 @@ typedef enum MAV_MODE
    MAV_MODE_TEST_DISARMED=66, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for developers only. | */
    MAV_MODE_STABILIZE_DISARMED=80, /* System is allowed to be active, under assisted RC control. | */
    MAV_MODE_GUIDED_DISARMED=88, /* System is allowed to be active, under autonomous control, manual setpoint | */
-   MAV_MODE_AUTO_DISARMED=92, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by waypoints) | */
+   MAV_MODE_AUTO_DISARMED=92, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by MISSIONs) | */
    MAV_MODE_MANUAL_ARMED=192, /* System is allowed to be active, under manual (RC) control, no stabilization | */
    MAV_MODE_TEST_ARMED=194, /* UNDEFINED mode. This solely depends on the autopilot - use with caution, intended for developers only. | */
    MAV_MODE_STABILIZE_ARMED=208, /* System is allowed to be active, under assisted RC control. | */
    MAV_MODE_GUIDED_ARMED=216, /* System is allowed to be active, under autonomous control, manual setpoint | */
-   MAV_MODE_AUTO_ARMED=220, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by waypoints) | */
+   MAV_MODE_AUTO_ARMED=220, /* System is allowed to be active, under autonomous control and navigation (the trajectory is decided onboard and not pre-programmed by MISSIONs) | */
    MAV_MODE_ENUM_END=221, /*  | */
 } MAV_MODE;
 #endif
@@ -194,8 +195,7 @@ typedef enum MAV_STATE
    MAV_STATE_CRITICAL=5, /* System is in a non-normal flight mode. It can however still navigate. | */
    MAV_STATE_EMERGENCY=6, /* System is in a non-normal flight mode. It lost control over parts or over the whole airframe. It is in mayday and going down. | */
    MAV_STATE_POWEROFF=7, /* System just initialized its power-down sequence, will shut down now. | */
-   MAV_STATE_FLIGHT_TERMINATION=8, /* System is terminating itself. | */
-   MAV_STATE_ENUM_END=9, /*  | */
+   MAV_STATE_ENUM_END=8, /*  | */
 } MAV_STATE;
 #endif
 
@@ -205,13 +205,7 @@ typedef enum MAV_STATE
 typedef enum MAV_COMPONENT
 {
    MAV_COMP_ID_ALL=0, /*  | */
-   MAV_COMP_ID_AUTOPILOT1=1, /*  | */
    MAV_COMP_ID_CAMERA=100, /*  | */
-   MAV_COMP_ID_CAMERA2=101, /*  | */
-   MAV_COMP_ID_CAMERA3=102, /*  | */
-   MAV_COMP_ID_CAMERA4=103, /*  | */
-   MAV_COMP_ID_CAMERA5=104, /*  | */
-   MAV_COMP_ID_CAMERA6=105, /*  | */
    MAV_COMP_ID_SERVO1=140, /*  | */
    MAV_COMP_ID_SERVO2=141, /*  | */
    MAV_COMP_ID_SERVO3=142, /*  | */
@@ -239,7 +233,6 @@ typedef enum MAV_COMPONENT
    MAV_COMP_ID_IMU_2=201, /*  | */
    MAV_COMP_ID_IMU_3=202, /*  | */
    MAV_COMP_ID_GPS=220, /*  | */
-   MAV_COMP_ID_GPS2=221, /*  | */
    MAV_COMP_ID_UDP_BRIDGE=240, /*  | */
    MAV_COMP_ID_UART_BRIDGE=241, /*  | */
    MAV_COMP_ID_SYSTEM_CONTROL=250, /*  | */
@@ -277,8 +270,7 @@ typedef enum MAV_SYS_STATUS_SENSOR
    MAV_SYS_STATUS_TERRAIN=4194304, /* 0x400000 Terrain subsystem health | */
    MAV_SYS_STATUS_REVERSE_MOTOR=8388608, /* 0x800000 Motors are reversed | */
    MAV_SYS_STATUS_LOGGING=16777216, /* 0x1000000 Logging | */
-   MAV_SYS_STATUS_SENSOR_BATTERY=33554432, /* 0x2000000 Battery | */
-   MAV_SYS_STATUS_SENSOR_ENUM_END=33554433, /*  | */
+   MAV_SYS_STATUS_SENSOR_ENUM_END=16777217, /*  | */
 } MAV_SYS_STATUS_SENSOR;
 #endif
 
@@ -357,33 +349,6 @@ typedef enum MAV_MOUNT_MODE
    MAV_MOUNT_MODE_GPS_POINT=4, /* Load neutral position and start to point to Lat,Lon,Alt | */
    MAV_MOUNT_MODE_ENUM_END=5, /*  | */
 } MAV_MOUNT_MODE;
-#endif
-
-/** @brief Generalized UAVCAN node health */
-#ifndef HAVE_ENUM_UAVCAN_NODE_HEALTH
-#define HAVE_ENUM_UAVCAN_NODE_HEALTH
-typedef enum UAVCAN_NODE_HEALTH
-{
-   UAVCAN_NODE_HEALTH_OK=0, /* The node is functioning properly. | */
-   UAVCAN_NODE_HEALTH_WARNING=1, /* A critical parameter went out of range or the node has encountered a minor failure. | */
-   UAVCAN_NODE_HEALTH_ERROR=2, /* The node has encountered a major failure. | */
-   UAVCAN_NODE_HEALTH_CRITICAL=3, /* The node has suffered a fatal malfunction. | */
-   UAVCAN_NODE_HEALTH_ENUM_END=4, /*  | */
-} UAVCAN_NODE_HEALTH;
-#endif
-
-/** @brief Generalized UAVCAN node mode */
-#ifndef HAVE_ENUM_UAVCAN_NODE_MODE
-#define HAVE_ENUM_UAVCAN_NODE_MODE
-typedef enum UAVCAN_NODE_MODE
-{
-   UAVCAN_NODE_MODE_OPERATIONAL=0, /* The node is performing its primary functions. | */
-   UAVCAN_NODE_MODE_INITIALIZATION=1, /* The node is initializing; this mode is entered immediately after startup. | */
-   UAVCAN_NODE_MODE_MAINTENANCE=2, /* The node is under maintenance. | */
-   UAVCAN_NODE_MODE_SOFTWARE_UPDATE=3, /* The node is in the process of updating its software. | */
-   UAVCAN_NODE_MODE_OFFLINE=7, /* The node is no longer available online. | */
-   UAVCAN_NODE_MODE_ENUM_END=8, /*  | */
-} UAVCAN_NODE_MODE;
 #endif
 
 /** @brief Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data. */
@@ -509,7 +474,7 @@ typedef enum MAV_CMD
          |Radius in meters| Min Alt| Max Alt| Reserved| Latitude| Longitude| Reserved|  */
    MAV_CMD_NAV_FENCE_CIRCLE_EXCLUSION=5004, /* 
           Circular fence area. The vehicle must stay outside this area.
-         |radius in meters| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
+         |Radius in meters| Min Alt| Max Alt| Reserved| Latitude| Longitude| Reserved|  */
    MAV_CMD_NAV_RALLY_POINT=5100, /* 
           Rally point. You can have multiple rally points defined.
          |Reserved| Reserved| Reserved| Reserved| Latitude| Longitude| Reserved|  */
@@ -537,9 +502,11 @@ typedef enum MAV_CMD
 } MAV_CMD;
 #endif
 
-/** @brief THIS INTERFACE IS DEPRECATED AS OF JULY 2015. Please use MESSAGE_INTERVAL instead. A data stream is not a fixed set of messages, but rather a
-     recommendation to the autopilot software. Individual autopilots may or may not obey
-     the recommended messages. */
+/** @brief 
+        THIS INTERFACE IS DEPRECATED AS OF JULY 2015. Please use MESSAGE_INTERVAL instead. A data stream is not a fixed set of messages, but rather a
+        recommendation to the autopilot software. Individual autopilots may or may not obey
+        the recommended messages.
+       */
 #ifndef HAVE_ENUM_MAV_DATA_STREAM
 #define HAVE_ENUM_MAV_DATA_STREAM
 typedef enum MAV_DATA_STREAM
@@ -557,16 +524,18 @@ typedef enum MAV_DATA_STREAM
 } MAV_DATA_STREAM;
 #endif
 
-/** @brief  The ROI (region of interest) for the vehicle. This can be
-                be used by the vehicle for camera/vehicle attitude alignment (see
-                MAV_CMD_NAV_ROI). */
+/** @brief 
+        The ROI (region of interest) for the vehicle. This can be
+        be used by the vehicle for camera/vehicle attitude alignment (see
+        MAV_CMD_NAV_ROI).
+       */
 #ifndef HAVE_ENUM_MAV_ROI
 #define HAVE_ENUM_MAV_ROI
 typedef enum MAV_ROI
 {
    MAV_ROI_NONE=0, /* No region of interest. | */
-   MAV_ROI_WPNEXT=1, /* Point toward next waypoint. | */
-   MAV_ROI_WPINDEX=2, /* Point toward given waypoint. | */
+   MAV_ROI_WPNEXT=1, /* Point toward next MISSION. | */
+   MAV_ROI_WPINDEX=2, /* Point toward given MISSION. | */
    MAV_ROI_LOCATION=3, /* Point toward fixed location. | */
    MAV_ROI_TARGET=4, /* Point toward of given id. | */
    MAV_ROI_ENUM_END=5, /*  | */
@@ -608,26 +577,6 @@ typedef enum MAV_PARAM_TYPE
    MAV_PARAM_TYPE_REAL64=10, /* 64-bit floating-point | */
    MAV_PARAM_TYPE_ENUM_END=11, /*  | */
 } MAV_PARAM_TYPE;
-#endif
-
-/** @brief Specifies the datatype of a MAVLink extended parameter. */
-#ifndef HAVE_ENUM_MAV_PARAM_EXT_TYPE
-#define HAVE_ENUM_MAV_PARAM_EXT_TYPE
-typedef enum MAV_PARAM_EXT_TYPE
-{
-   MAV_PARAM_EXT_TYPE_UINT8=1, /* 8-bit unsigned integer | */
-   MAV_PARAM_EXT_TYPE_INT8=2, /* 8-bit signed integer | */
-   MAV_PARAM_EXT_TYPE_UINT16=3, /* 16-bit unsigned integer | */
-   MAV_PARAM_EXT_TYPE_INT16=4, /* 16-bit signed integer | */
-   MAV_PARAM_EXT_TYPE_UINT32=5, /* 32-bit unsigned integer | */
-   MAV_PARAM_EXT_TYPE_INT32=6, /* 32-bit signed integer | */
-   MAV_PARAM_EXT_TYPE_UINT64=7, /* 64-bit unsigned integer | */
-   MAV_PARAM_EXT_TYPE_INT64=8, /* 64-bit signed integer | */
-   MAV_PARAM_EXT_TYPE_REAL32=9, /* 32-bit floating-point | */
-   MAV_PARAM_EXT_TYPE_REAL64=10, /* 64-bit floating-point | */
-   MAV_PARAM_EXT_TYPE_CUSTOM=11, /* Custom Type | */
-   MAV_PARAM_EXT_TYPE_ENUM_END=12, /*  | */
-} MAV_PARAM_EXT_TYPE;
 #endif
 
 /** @brief result from a mavlink command */
@@ -737,9 +686,7 @@ typedef enum MAV_DISTANCE_SENSOR
    MAV_DISTANCE_SENSOR_LASER=0, /* Laser rangefinder, e.g. LightWare SF02/F or PulsedLight units | */
    MAV_DISTANCE_SENSOR_ULTRASOUND=1, /* Ultrasound rangefinder, e.g. MaxBotix units | */
    MAV_DISTANCE_SENSOR_INFRARED=2, /* Infrared rangefinder, e.g. Sharp units | */
-   MAV_DISTANCE_SENSOR_RADAR=3, /* Radar type, e.g. uLanding units | */
-   MAV_DISTANCE_SENSOR_UNKNOWN=4, /* Broken or unknown type, e.g. analog units | */
-   MAV_DISTANCE_SENSOR_ENUM_END=5, /*  | */
+   MAV_DISTANCE_SENSOR_ENUM_END=3, /*  | */
 } MAV_DISTANCE_SENSOR;
 #endif
 
@@ -966,6 +913,20 @@ typedef enum MAV_DO_REPOSITION_FLAGS
 } MAV_DO_REPOSITION_FLAGS;
 #endif
 
+/** @brief Altitude and speed overrides bitmask */
+#ifndef HAVE_ENUM_OVERRIDES
+#define HAVE_ENUM_OVERRIDES
+typedef enum OVERRIDES
+{
+   ALTITUDE_OVERRIDE_ENABLED=0, /* Altitude override enabled | */
+   ALTITUDE_OVERRIDE_TYPE=1, /* Altitude override type (AGL/MSL) | */
+   SPEED_OVERRIDE_ENABLED=2, /* Speed override enabled | */
+   SPEED_OVERRIDE_TYPE=3, /* Speed override type | */
+   TERRAIN_FAILSAFE_ENABLED=4, /* DGPS/SBAS aided 3D position | */
+   OVERRIDES_ENUM_END=5, /*  | */
+} OVERRIDES;
+#endif
+
 /** @brief Flags in EKF_STATUS message */
 #ifndef HAVE_ENUM_ESTIMATOR_STATUS_FLAGS
 #define HAVE_ENUM_ESTIMATOR_STATUS_FLAGS
@@ -1067,91 +1028,8 @@ typedef enum GPS_FIX_TYPE
    GPS_FIX_TYPE_RTK_FLOAT=5, /* RTK float, 3D position | */
    GPS_FIX_TYPE_RTK_FIXED=6, /* RTK Fixed, 3D position | */
    GPS_FIX_TYPE_STATIC=7, /* Static fixed, typically used for base stations | */
-   GPS_FIX_TYPE_PPP=8, /* PPP, 3D position. | */
-   GPS_FIX_TYPE_ENUM_END=9, /*  | */
+   GPS_FIX_TYPE_ENUM_END=8, /*  | */
 } GPS_FIX_TYPE;
-#endif
-
-/** @brief Type of landing target */
-#ifndef HAVE_ENUM_LANDING_TARGET_TYPE
-#define HAVE_ENUM_LANDING_TARGET_TYPE
-typedef enum LANDING_TARGET_TYPE
-{
-   LANDING_TARGET_TYPE_LIGHT_BEACON=0, /* Landing target signaled by light beacon (ex: IR-LOCK) | */
-   LANDING_TARGET_TYPE_RADIO_BEACON=1, /* Landing target signaled by radio beacon (ex: ILS, NDB) | */
-   LANDING_TARGET_TYPE_VISION_FIDUCIAL=2, /* Landing target represented by a fiducial marker (ex: ARTag) | */
-   LANDING_TARGET_TYPE_VISION_OTHER=3, /* Landing target represented by a pre-defined visual shape/feature (ex: X-marker, H-marker, square) | */
-   LANDING_TARGET_TYPE_ENUM_END=4, /*  | */
-} LANDING_TARGET_TYPE;
-#endif
-
-/** @brief Direction of VTOL transition */
-#ifndef HAVE_ENUM_VTOL_TRANSITION_HEADING
-#define HAVE_ENUM_VTOL_TRANSITION_HEADING
-typedef enum VTOL_TRANSITION_HEADING
-{
-   VTOL_TRANSITION_HEADING_VEHICLE_DEFAULT=0, /* Respect the heading configuration of the vehicle. | */
-   VTOL_TRANSITION_HEADING_NEXT_WAYPOINT=1, /* Use the heading pointing towards the next waypoint. | */
-   VTOL_TRANSITION_HEADING_TAKEOFF=2, /* Use the heading on takeoff (while sitting on the ground). | */
-   VTOL_TRANSITION_HEADING_SPECIFIED=3, /* Use the specified heading in parameter 4. | */
-   VTOL_TRANSITION_HEADING_ANY=4, /* Use the current heading when reaching takeoff altitude (potentially facing the wind when weather-vaning is active). | */
-   VTOL_TRANSITION_HEADING_ENUM_END=5, /*  | */
-} VTOL_TRANSITION_HEADING;
-#endif
-
-/** @brief Camera capability flags (Bitmap). */
-#ifndef HAVE_ENUM_CAMERA_CAP_FLAGS
-#define HAVE_ENUM_CAMERA_CAP_FLAGS
-typedef enum CAMERA_CAP_FLAGS
-{
-   CAMERA_CAP_FLAGS_CAPTURE_VIDEO=1, /* Camera is able to record video. | */
-   CAMERA_CAP_FLAGS_CAPTURE_IMAGE=2, /* Camera is able to capture images. | */
-   CAMERA_CAP_FLAGS_HAS_MODES=4, /* Camera has separate Video and Image/Photo modes (MAV_CMD_SET_CAMERA_MODE) | */
-   CAMERA_CAP_FLAGS_CAN_CAPTURE_IMAGE_IN_VIDEO_MODE=8, /* Camera can capture images while in video mode | */
-   CAMERA_CAP_FLAGS_CAN_CAPTURE_VIDEO_IN_IMAGE_MODE=16, /* Camera can capture videos while in Photo/Image mode | */
-   CAMERA_CAP_FLAGS_HAS_IMAGE_SURVEY_MODE=32, /* Camera has image survey mode (MAV_CMD_SET_CAMERA_MODE) | */
-   CAMERA_CAP_FLAGS_ENUM_END=33, /*  | */
-} CAMERA_CAP_FLAGS;
-#endif
-
-/** @brief Result from a PARAM_EXT_SET message. */
-#ifndef HAVE_ENUM_PARAM_ACK
-#define HAVE_ENUM_PARAM_ACK
-typedef enum PARAM_ACK
-{
-   PARAM_ACK_ACCEPTED=0, /* Parameter value ACCEPTED and SET | */
-   PARAM_ACK_VALUE_UNSUPPORTED=1, /* Parameter value UNKNOWN/UNSUPPORTED | */
-   PARAM_ACK_FAILED=2, /* Parameter failed to set | */
-   PARAM_ACK_IN_PROGRESS=3, /* Parameter value received but not yet validated or set. A subsequent PARAM_EXT_ACK will follow once operation is completed with the actual result. These are for parameters that may take longer to set. Instead of waiting for an ACK and potentially timing out, you will immediately receive this response to let you know it was received. | */
-   PARAM_ACK_ENUM_END=4, /*  | */
-} PARAM_ACK;
-#endif
-
-/** @brief Camera Modes. */
-#ifndef HAVE_ENUM_CAMERA_MODE
-#define HAVE_ENUM_CAMERA_MODE
-typedef enum CAMERA_MODE
-{
-   CAMERA_MODE_IMAGE=0, /* Camera is in image/photo capture mode. | */
-   CAMERA_MODE_VIDEO=1, /* Camera is in video capture mode. | */
-   CAMERA_MODE_IMAGE_SURVEY=2, /* Camera is in image survey capture mode. It allows for camera controller to do specific settings for surveys. | */
-   CAMERA_MODE_ENUM_END=3, /*  | */
-} CAMERA_MODE;
-#endif
-
-/** @brief  */
-#ifndef HAVE_ENUM_MAV_ARM_AUTH_DENIED_REASON
-#define HAVE_ENUM_MAV_ARM_AUTH_DENIED_REASON
-typedef enum MAV_ARM_AUTH_DENIED_REASON
-{
-   MAV_ARM_AUTH_DENIED_REASON_GENERIC=0, /* Not a specific reason | */
-   MAV_ARM_AUTH_DENIED_REASON_NONE=1, /* Authorizer will send the error as string to GCS | */
-   MAV_ARM_AUTH_DENIED_REASON_INVALID_WAYPOINT=2, /* At least one waypoint have a invalid value | */
-   MAV_ARM_AUTH_DENIED_REASON_TIMEOUT=3, /* Timeout in the authorizer process(in case it depends on network) | */
-   MAV_ARM_AUTH_DENIED_REASON_AIRSPACE_IN_USE=4, /* Airspace of the mission in use by another vehicle, second result parameter can have the waypoint id that caused it to be denied. | */
-   MAV_ARM_AUTH_DENIED_REASON_BAD_WEATHER=5, /* Weather is not good to fly | */
-   MAV_ARM_AUTH_DENIED_REASON_ENUM_END=6, /*  | */
-} MAV_ARM_AUTH_DENIED_REASON;
 #endif
 
 // MAVLINK VERSION
