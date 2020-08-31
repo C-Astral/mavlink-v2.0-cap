@@ -8,7 +8,7 @@ typedef struct __mavlink_cap_status_t {
  double home_latitude; /*<  Home latitude*/
  double home_longitude; /*<  Home longitude*/
  double home_altitude; /*<  Home altitude*/
- uint32_t global_status; /*<  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended*/
+ uint32_t global_status; /*<  0-airspeed-cal, 1-parachute, 2-home init, 3-landed, 4-speed override, 5-altitude ovveride, 6-battery low, 7-battery critical, 8-falsafe, 9-failsafe rc loss, 10-failsafe GPS loss, 11-failsafe data link loss, 12-failsafe mission, 13-failsafe offboard loss, 14-failsafe loss of control, 15-failsafe_min_agl, 16 - failsafe_crit_agl, 17 - terrain failsafe enabled, 18 - altitude override type, 19 - speed override type, 20 - gimbal extended, 21 - lights*/
  float speed_override_value; /*<  Speed override value*/
  uint32_t flightplan_hash; /*<  Flightplan hash*/
  uint16_t number_of_photos; /*<  Number of photos taken in a mission*/
