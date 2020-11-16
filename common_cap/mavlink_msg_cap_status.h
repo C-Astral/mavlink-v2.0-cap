@@ -11,6 +11,8 @@ typedef struct __mavlink_cap_status_t {
  float speed_override_value; /*< Speed override value*/
  uint32_t flightplan_hash; /*< Flightplan hash*/
  float baro_altitude; /*< Barometer altitude*/
+ float eph; /*< Standard deviation of horizontal position error, (metres)*/
+ float epv; /*< Standard deviation of vertical position error, (metres)*/
  uint16_t number_of_photos; /*< Number of photos taken in a mission*/
  uint16_t air_time; /*< Time since take-off*/
  uint16_t battery_voltage; /*< Battery voltage*/
@@ -20,13 +22,13 @@ typedef struct __mavlink_cap_status_t {
  uint16_t flightplan_items_count; /*< Flightplan Items Count*/
 }) mavlink_cap_status_t;
 
-#define MAVLINK_MSG_ID_CAP_STATUS_LEN 54
-#define MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN 54
-#define MAVLINK_MSG_ID_180_LEN 54
-#define MAVLINK_MSG_ID_180_MIN_LEN 54
+#define MAVLINK_MSG_ID_CAP_STATUS_LEN 62
+#define MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN 62
+#define MAVLINK_MSG_ID_180_LEN 62
+#define MAVLINK_MSG_ID_180_MIN_LEN 62
 
-#define MAVLINK_MSG_ID_CAP_STATUS_CRC 138
-#define MAVLINK_MSG_ID_180_CRC 138
+#define MAVLINK_MSG_ID_CAP_STATUS_CRC 93
+#define MAVLINK_MSG_ID_180_CRC 93
 
 
 
@@ -34,7 +36,7 @@ typedef struct __mavlink_cap_status_t {
 #define MAVLINK_MESSAGE_INFO_CAP_STATUS { \
 	180, \
 	"CAP_STATUS", \
-	14, \
+	16, \
 	{  { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
          { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
          { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
@@ -42,19 +44,21 @@ typedef struct __mavlink_cap_status_t {
          { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
          { "flightplan_hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 32, offsetof(mavlink_cap_status_t, flightplan_hash) }, \
          { "baro_altitude", NULL, MAVLINK_TYPE_FLOAT, 0, 36, offsetof(mavlink_cap_status_t, baro_altitude) }, \
-         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 40, offsetof(mavlink_cap_status_t, number_of_photos) }, \
-         { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 42, offsetof(mavlink_cap_status_t, air_time) }, \
-         { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 44, offsetof(mavlink_cap_status_t, battery_voltage) }, \
-         { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 46, offsetof(mavlink_cap_status_t, battery_current) }, \
-         { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 48, offsetof(mavlink_cap_status_t, battery_remaining) }, \
-         { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 50, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
-         { "flightplan_items_count", NULL, MAVLINK_TYPE_UINT16_T, 0, 52, offsetof(mavlink_cap_status_t, flightplan_items_count) }, \
+         { "eph", NULL, MAVLINK_TYPE_FLOAT, 0, 40, offsetof(mavlink_cap_status_t, eph) }, \
+         { "epv", NULL, MAVLINK_TYPE_FLOAT, 0, 44, offsetof(mavlink_cap_status_t, epv) }, \
+         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 48, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+         { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 50, offsetof(mavlink_cap_status_t, air_time) }, \
+         { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 52, offsetof(mavlink_cap_status_t, battery_voltage) }, \
+         { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 54, offsetof(mavlink_cap_status_t, battery_current) }, \
+         { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 56, offsetof(mavlink_cap_status_t, battery_remaining) }, \
+         { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 58, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
+         { "flightplan_items_count", NULL, MAVLINK_TYPE_UINT16_T, 0, 60, offsetof(mavlink_cap_status_t, flightplan_items_count) }, \
          } \
 }
 #else
 #define MAVLINK_MESSAGE_INFO_CAP_STATUS { \
 	"CAP_STATUS", \
-	14, \
+	16, \
 	{  { "home_latitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 0, offsetof(mavlink_cap_status_t, home_latitude) }, \
          { "home_longitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 8, offsetof(mavlink_cap_status_t, home_longitude) }, \
          { "home_altitude", NULL, MAVLINK_TYPE_DOUBLE, 0, 16, offsetof(mavlink_cap_status_t, home_altitude) }, \
@@ -62,13 +66,15 @@ typedef struct __mavlink_cap_status_t {
          { "speed_override_value", NULL, MAVLINK_TYPE_FLOAT, 0, 28, offsetof(mavlink_cap_status_t, speed_override_value) }, \
          { "flightplan_hash", NULL, MAVLINK_TYPE_UINT32_T, 0, 32, offsetof(mavlink_cap_status_t, flightplan_hash) }, \
          { "baro_altitude", NULL, MAVLINK_TYPE_FLOAT, 0, 36, offsetof(mavlink_cap_status_t, baro_altitude) }, \
-         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 40, offsetof(mavlink_cap_status_t, number_of_photos) }, \
-         { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 42, offsetof(mavlink_cap_status_t, air_time) }, \
-         { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 44, offsetof(mavlink_cap_status_t, battery_voltage) }, \
-         { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 46, offsetof(mavlink_cap_status_t, battery_current) }, \
-         { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 48, offsetof(mavlink_cap_status_t, battery_remaining) }, \
-         { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 50, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
-         { "flightplan_items_count", NULL, MAVLINK_TYPE_UINT16_T, 0, 52, offsetof(mavlink_cap_status_t, flightplan_items_count) }, \
+         { "eph", NULL, MAVLINK_TYPE_FLOAT, 0, 40, offsetof(mavlink_cap_status_t, eph) }, \
+         { "epv", NULL, MAVLINK_TYPE_FLOAT, 0, 44, offsetof(mavlink_cap_status_t, epv) }, \
+         { "number_of_photos", NULL, MAVLINK_TYPE_UINT16_T, 0, 48, offsetof(mavlink_cap_status_t, number_of_photos) }, \
+         { "air_time", NULL, MAVLINK_TYPE_UINT16_T, 0, 50, offsetof(mavlink_cap_status_t, air_time) }, \
+         { "battery_voltage", NULL, MAVLINK_TYPE_UINT16_T, 0, 52, offsetof(mavlink_cap_status_t, battery_voltage) }, \
+         { "battery_current", NULL, MAVLINK_TYPE_UINT16_T, 0, 54, offsetof(mavlink_cap_status_t, battery_current) }, \
+         { "battery_remaining", NULL, MAVLINK_TYPE_UINT16_T, 0, 56, offsetof(mavlink_cap_status_t, battery_remaining) }, \
+         { "altitude_override_value", NULL, MAVLINK_TYPE_INT16_T, 0, 58, offsetof(mavlink_cap_status_t, altitude_override_value) }, \
+         { "flightplan_items_count", NULL, MAVLINK_TYPE_UINT16_T, 0, 60, offsetof(mavlink_cap_status_t, flightplan_items_count) }, \
          } \
 }
 #endif
@@ -93,10 +99,12 @@ typedef struct __mavlink_cap_status_t {
  * @param flightplan_hash Flightplan hash
  * @param flightplan_items_count Flightplan Items Count
  * @param baro_altitude Barometer altitude
+ * @param eph Standard deviation of horizontal position error, (metres)
+ * @param epv Standard deviation of vertical position error, (metres)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-						       uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude)
+						       uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude, float eph, float epv)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
@@ -107,13 +115,15 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
 	_mav_put_float(buf, 28, speed_override_value);
 	_mav_put_uint32_t(buf, 32, flightplan_hash);
 	_mav_put_float(buf, 36, baro_altitude);
-	_mav_put_uint16_t(buf, 40, number_of_photos);
-	_mav_put_uint16_t(buf, 42, air_time);
-	_mav_put_uint16_t(buf, 44, battery_voltage);
-	_mav_put_uint16_t(buf, 46, battery_current);
-	_mav_put_uint16_t(buf, 48, battery_remaining);
-	_mav_put_int16_t(buf, 50, altitude_override_value);
-	_mav_put_uint16_t(buf, 52, flightplan_items_count);
+	_mav_put_float(buf, 40, eph);
+	_mav_put_float(buf, 44, epv);
+	_mav_put_uint16_t(buf, 48, number_of_photos);
+	_mav_put_uint16_t(buf, 50, air_time);
+	_mav_put_uint16_t(buf, 52, battery_voltage);
+	_mav_put_uint16_t(buf, 54, battery_current);
+	_mav_put_uint16_t(buf, 56, battery_remaining);
+	_mav_put_int16_t(buf, 58, altitude_override_value);
+	_mav_put_uint16_t(buf, 60, flightplan_items_count);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #else
@@ -125,6 +135,8 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
 	packet.speed_override_value = speed_override_value;
 	packet.flightplan_hash = flightplan_hash;
 	packet.baro_altitude = baro_altitude;
+	packet.eph = eph;
+	packet.epv = epv;
 	packet.number_of_photos = number_of_photos;
 	packet.air_time = air_time;
 	packet.battery_voltage = battery_voltage;
@@ -160,11 +172,13 @@ static inline uint16_t mavlink_msg_cap_status_pack(uint8_t system_id, uint8_t co
  * @param flightplan_hash Flightplan hash
  * @param flightplan_items_count Flightplan Items Count
  * @param baro_altitude Barometer altitude
+ * @param eph Standard deviation of horizontal position error, (metres)
+ * @param epv Standard deviation of vertical position error, (metres)
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
 							   mavlink_message_t* msg,
-						           uint16_t number_of_photos,uint16_t air_time,uint16_t battery_voltage,uint16_t battery_current,uint16_t battery_remaining,uint32_t global_status,double home_latitude,double home_longitude,double home_altitude,int16_t altitude_override_value,float speed_override_value,uint32_t flightplan_hash,uint16_t flightplan_items_count,float baro_altitude)
+						           uint16_t number_of_photos,uint16_t air_time,uint16_t battery_voltage,uint16_t battery_current,uint16_t battery_remaining,uint32_t global_status,double home_latitude,double home_longitude,double home_altitude,int16_t altitude_override_value,float speed_override_value,uint32_t flightplan_hash,uint16_t flightplan_items_count,float baro_altitude,float eph,float epv)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
@@ -175,13 +189,15 @@ static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8
 	_mav_put_float(buf, 28, speed_override_value);
 	_mav_put_uint32_t(buf, 32, flightplan_hash);
 	_mav_put_float(buf, 36, baro_altitude);
-	_mav_put_uint16_t(buf, 40, number_of_photos);
-	_mav_put_uint16_t(buf, 42, air_time);
-	_mav_put_uint16_t(buf, 44, battery_voltage);
-	_mav_put_uint16_t(buf, 46, battery_current);
-	_mav_put_uint16_t(buf, 48, battery_remaining);
-	_mav_put_int16_t(buf, 50, altitude_override_value);
-	_mav_put_uint16_t(buf, 52, flightplan_items_count);
+	_mav_put_float(buf, 40, eph);
+	_mav_put_float(buf, 44, epv);
+	_mav_put_uint16_t(buf, 48, number_of_photos);
+	_mav_put_uint16_t(buf, 50, air_time);
+	_mav_put_uint16_t(buf, 52, battery_voltage);
+	_mav_put_uint16_t(buf, 54, battery_current);
+	_mav_put_uint16_t(buf, 56, battery_remaining);
+	_mav_put_int16_t(buf, 58, altitude_override_value);
+	_mav_put_uint16_t(buf, 60, flightplan_items_count);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_CAP_STATUS_LEN);
 #else
@@ -193,6 +209,8 @@ static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8
 	packet.speed_override_value = speed_override_value;
 	packet.flightplan_hash = flightplan_hash;
 	packet.baro_altitude = baro_altitude;
+	packet.eph = eph;
+	packet.epv = epv;
 	packet.number_of_photos = number_of_photos;
 	packet.air_time = air_time;
 	packet.battery_voltage = battery_voltage;
@@ -218,7 +236,7 @@ static inline uint16_t mavlink_msg_cap_status_pack_chan(uint8_t system_id, uint8
  */
 static inline uint16_t mavlink_msg_cap_status_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_cap_status_t* cap_status)
 {
-	return mavlink_msg_cap_status_pack(system_id, component_id, msg, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude);
+	return mavlink_msg_cap_status_pack(system_id, component_id, msg, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude, cap_status->eph, cap_status->epv);
 }
 
 /**
@@ -232,7 +250,7 @@ static inline uint16_t mavlink_msg_cap_status_encode(uint8_t system_id, uint8_t 
  */
 static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_cap_status_t* cap_status)
 {
-	return mavlink_msg_cap_status_pack_chan(system_id, component_id, chan, msg, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude);
+	return mavlink_msg_cap_status_pack_chan(system_id, component_id, chan, msg, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude, cap_status->eph, cap_status->epv);
 }
 
 /**
@@ -253,10 +271,12 @@ static inline uint16_t mavlink_msg_cap_status_encode_chan(uint8_t system_id, uin
  * @param flightplan_hash Flightplan hash
  * @param flightplan_items_count Flightplan Items Count
  * @param baro_altitude Barometer altitude
+ * @param eph Standard deviation of horizontal position error, (metres)
+ * @param epv Standard deviation of vertical position error, (metres)
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude)
+static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude, float eph, float epv)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_CAP_STATUS_LEN];
@@ -267,13 +287,15 @@ static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint16_t 
 	_mav_put_float(buf, 28, speed_override_value);
 	_mav_put_uint32_t(buf, 32, flightplan_hash);
 	_mav_put_float(buf, 36, baro_altitude);
-	_mav_put_uint16_t(buf, 40, number_of_photos);
-	_mav_put_uint16_t(buf, 42, air_time);
-	_mav_put_uint16_t(buf, 44, battery_voltage);
-	_mav_put_uint16_t(buf, 46, battery_current);
-	_mav_put_uint16_t(buf, 48, battery_remaining);
-	_mav_put_int16_t(buf, 50, altitude_override_value);
-	_mav_put_uint16_t(buf, 52, flightplan_items_count);
+	_mav_put_float(buf, 40, eph);
+	_mav_put_float(buf, 44, epv);
+	_mav_put_uint16_t(buf, 48, number_of_photos);
+	_mav_put_uint16_t(buf, 50, air_time);
+	_mav_put_uint16_t(buf, 52, battery_voltage);
+	_mav_put_uint16_t(buf, 54, battery_current);
+	_mav_put_uint16_t(buf, 56, battery_remaining);
+	_mav_put_int16_t(buf, 58, altitude_override_value);
+	_mav_put_uint16_t(buf, 60, flightplan_items_count);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, buf, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #else
@@ -285,6 +307,8 @@ static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint16_t 
 	packet.speed_override_value = speed_override_value;
 	packet.flightplan_hash = flightplan_hash;
 	packet.baro_altitude = baro_altitude;
+	packet.eph = eph;
+	packet.epv = epv;
 	packet.number_of_photos = number_of_photos;
 	packet.air_time = air_time;
 	packet.battery_voltage = battery_voltage;
@@ -305,7 +329,7 @@ static inline void mavlink_msg_cap_status_send(mavlink_channel_t chan, uint16_t 
 static inline void mavlink_msg_cap_status_send_struct(mavlink_channel_t chan, const mavlink_cap_status_t* cap_status)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
-    mavlink_msg_cap_status_send(chan, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude);
+    mavlink_msg_cap_status_send(chan, cap_status->number_of_photos, cap_status->air_time, cap_status->battery_voltage, cap_status->battery_current, cap_status->battery_remaining, cap_status->global_status, cap_status->home_latitude, cap_status->home_longitude, cap_status->home_altitude, cap_status->altitude_override_value, cap_status->speed_override_value, cap_status->flightplan_hash, cap_status->flightplan_items_count, cap_status->baro_altitude, cap_status->eph, cap_status->epv);
 #else
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, (const char *)cap_status, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #endif
@@ -319,7 +343,7 @@ static inline void mavlink_msg_cap_status_send_struct(mavlink_channel_t chan, co
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude)
+static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint16_t number_of_photos, uint16_t air_time, uint16_t battery_voltage, uint16_t battery_current, uint16_t battery_remaining, uint32_t global_status, double home_latitude, double home_longitude, double home_altitude, int16_t altitude_override_value, float speed_override_value, uint32_t flightplan_hash, uint16_t flightplan_items_count, float baro_altitude, float eph, float epv)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char *buf = (char *)msgbuf;
@@ -330,13 +354,15 @@ static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, ma
 	_mav_put_float(buf, 28, speed_override_value);
 	_mav_put_uint32_t(buf, 32, flightplan_hash);
 	_mav_put_float(buf, 36, baro_altitude);
-	_mav_put_uint16_t(buf, 40, number_of_photos);
-	_mav_put_uint16_t(buf, 42, air_time);
-	_mav_put_uint16_t(buf, 44, battery_voltage);
-	_mav_put_uint16_t(buf, 46, battery_current);
-	_mav_put_uint16_t(buf, 48, battery_remaining);
-	_mav_put_int16_t(buf, 50, altitude_override_value);
-	_mav_put_uint16_t(buf, 52, flightplan_items_count);
+	_mav_put_float(buf, 40, eph);
+	_mav_put_float(buf, 44, epv);
+	_mav_put_uint16_t(buf, 48, number_of_photos);
+	_mav_put_uint16_t(buf, 50, air_time);
+	_mav_put_uint16_t(buf, 52, battery_voltage);
+	_mav_put_uint16_t(buf, 54, battery_current);
+	_mav_put_uint16_t(buf, 56, battery_remaining);
+	_mav_put_int16_t(buf, 58, altitude_override_value);
+	_mav_put_uint16_t(buf, 60, flightplan_items_count);
 
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_CAP_STATUS, buf, MAVLINK_MSG_ID_CAP_STATUS_MIN_LEN, MAVLINK_MSG_ID_CAP_STATUS_LEN, MAVLINK_MSG_ID_CAP_STATUS_CRC);
 #else
@@ -348,6 +374,8 @@ static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, ma
 	packet->speed_override_value = speed_override_value;
 	packet->flightplan_hash = flightplan_hash;
 	packet->baro_altitude = baro_altitude;
+	packet->eph = eph;
+	packet->epv = epv;
 	packet->number_of_photos = number_of_photos;
 	packet->air_time = air_time;
 	packet->battery_voltage = battery_voltage;
@@ -373,7 +401,7 @@ static inline void mavlink_msg_cap_status_send_buf(mavlink_message_t *msgbuf, ma
  */
 static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  40);
+	return _MAV_RETURN_uint16_t(msg,  48);
 }
 
 /**
@@ -383,7 +411,7 @@ static inline uint16_t mavlink_msg_cap_status_get_number_of_photos(const mavlink
  */
 static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  42);
+	return _MAV_RETURN_uint16_t(msg,  50);
 }
 
 /**
@@ -393,7 +421,7 @@ static inline uint16_t mavlink_msg_cap_status_get_air_time(const mavlink_message
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_voltage(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  44);
+	return _MAV_RETURN_uint16_t(msg,  52);
 }
 
 /**
@@ -403,7 +431,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_voltage(const mavlink_
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_current(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  46);
+	return _MAV_RETURN_uint16_t(msg,  54);
 }
 
 /**
@@ -413,7 +441,7 @@ static inline uint16_t mavlink_msg_cap_status_get_battery_current(const mavlink_
  */
 static inline uint16_t mavlink_msg_cap_status_get_battery_remaining(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  48);
+	return _MAV_RETURN_uint16_t(msg,  56);
 }
 
 /**
@@ -463,7 +491,7 @@ static inline double mavlink_msg_cap_status_get_home_altitude(const mavlink_mess
  */
 static inline int16_t mavlink_msg_cap_status_get_altitude_override_value(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_int16_t(msg,  50);
+	return _MAV_RETURN_int16_t(msg,  58);
 }
 
 /**
@@ -493,7 +521,7 @@ static inline uint32_t mavlink_msg_cap_status_get_flightplan_hash(const mavlink_
  */
 static inline uint16_t mavlink_msg_cap_status_get_flightplan_items_count(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint16_t(msg,  52);
+	return _MAV_RETURN_uint16_t(msg,  60);
 }
 
 /**
@@ -504,6 +532,26 @@ static inline uint16_t mavlink_msg_cap_status_get_flightplan_items_count(const m
 static inline float mavlink_msg_cap_status_get_baro_altitude(const mavlink_message_t* msg)
 {
 	return _MAV_RETURN_float(msg,  36);
+}
+
+/**
+ * @brief Get field eph from cap_status message
+ *
+ * @return Standard deviation of horizontal position error, (metres)
+ */
+static inline float mavlink_msg_cap_status_get_eph(const mavlink_message_t* msg)
+{
+	return _MAV_RETURN_float(msg,  40);
+}
+
+/**
+ * @brief Get field epv from cap_status message
+ *
+ * @return Standard deviation of vertical position error, (metres)
+ */
+static inline float mavlink_msg_cap_status_get_epv(const mavlink_message_t* msg)
+{
+	return _MAV_RETURN_float(msg,  44);
 }
 
 /**
@@ -522,6 +570,8 @@ static inline void mavlink_msg_cap_status_decode(const mavlink_message_t* msg, m
 	cap_status->speed_override_value = mavlink_msg_cap_status_get_speed_override_value(msg);
 	cap_status->flightplan_hash = mavlink_msg_cap_status_get_flightplan_hash(msg);
 	cap_status->baro_altitude = mavlink_msg_cap_status_get_baro_altitude(msg);
+	cap_status->eph = mavlink_msg_cap_status_get_eph(msg);
+	cap_status->epv = mavlink_msg_cap_status_get_epv(msg);
 	cap_status->number_of_photos = mavlink_msg_cap_status_get_number_of_photos(msg);
 	cap_status->air_time = mavlink_msg_cap_status_get_air_time(msg);
 	cap_status->battery_voltage = mavlink_msg_cap_status_get_battery_voltage(msg);
