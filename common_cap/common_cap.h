@@ -226,7 +226,7 @@ typedef enum MAV_COMPONENT
 	MAV_COMP_ID_OSD=157, /* On Screen Display (OSD) devices for video links | */
 	MAV_COMP_ID_PERIPHERAL=158, /* Generic autopilot peripheral component ID. Meant for devices that do not implement the parameter sub-protocol | */
 	MAV_COMP_ID_QX1_GIMBAL=159, /*  | */
-	MAV_COMP_ID_MAPPER=180, /*  | */
+	MAV_COMP_ID_BATTERY=180, /*  | */
 	MAV_COMP_ID_MISSIONPLANNER=190, /*  | */
 	MAV_COMP_ID_PATHPLANNER=195, /*  | */
 	MAV_COMP_ID_IMU=200, /*  | */
@@ -414,8 +414,7 @@ typedef enum MAV_CMD
 	MAV_CMD_DO_MOTOR_TEST=209, /* Mission command to perform motor test |motor sequence number (a number from 1 to max number of motors on the vehicle)| throttle type (0=throttle percentage, 1=PWM, 2=pilot throttle channel pass-through. See MOTOR_TEST_THROTTLE_TYPE enum)| throttle| timeout (in seconds)| Empty| Empty| Empty|  */
 	MAV_CMD_DO_INVERTED_FLIGHT=210, /* Change to/from inverted flight |inverted (0=normal, 1=inverted)| Empty| Empty| Empty| Empty| Empty| Empty|  */
 	MAV_CMD_NAV_SET_YAW_SPEED=213, /* Sets a desired vehicle turn angle and speed change |yaw angle to adjust steering by in centidegress| speed - normalized to 0 .. 1| Empty| Empty| Empty| Empty| Empty|  */
-	MAV_CMD_DO_OVERRIDE=214, /* Altitude and speed override |Override mask| 0 - altitude override enabled, 1 - altitude override type (AGL/MSL), 2 - speed override enabled, 3 - speed override type (throttle/airspeed), 4 - terrain failsafe enable | Altitude override value| Speed override value| Empty| Empty| Empty|  */
-	MAV_CMD_DO_SET_CAM_TRIGG_INTERVAL=215, /* Mission command to set camera trigger interval for this flight. If triggering is enabled, the camera is triggered each time this interval expires. This command can also be used to set the shutter integration time for the camera. |Camera trigger cycle time (milliseconds). -1 or 0 to ignore.| Camera shutter integration time (milliseconds). Should be less than trigger cycle time. -1 or 0 to ignore.| Empty| Empty| Empty| Empty| Empty|  */
+	MAV_CMD_DO_SET_CAM_TRIGG_INTERVAL=214, /* Mission command to set camera trigger interval for this flight. If triggering is enabled, the camera is triggered each time this interval expires. This command can also be used to set the shutter integration time for the camera. |Camera trigger cycle time (milliseconds). -1 or 0 to ignore.| Camera shutter integration time (milliseconds). Should be less than trigger cycle time. -1 or 0 to ignore.| Empty| Empty| Empty| Empty| Empty|  */
 	MAV_CMD_DO_MOUNT_CONTROL_QUAT=220, /* Mission command to control a camera or antenna mount, using a quaternion as reference. |q1 - quaternion param #1, w (1 in null-rotation)| q2 - quaternion param #2, x (0 in null-rotation)| q3 - quaternion param #3, y (0 in null-rotation)| q4 - quaternion param #4, z (0 in null-rotation)| Empty| Empty| Empty|  */
 	MAV_CMD_DO_GUIDED_MASTER=221, /* set id of master controller |System ID| Component ID| Empty| Empty| Empty| Empty| Empty|  */
 	MAV_CMD_DO_GUIDED_LIMITS=222, /* set limits for external control |timeout - maximum time (in seconds) that external controller will be allowed to control vehicle. 0 means no timeout| absolute altitude min (in meters, AMSL) - if vehicle moves below this alt, the command will be aborted and the mission will continue.  0 means no lower altitude limit| absolute altitude max (in meters)- if vehicle moves above this alt, the command will be aborted and the mission will continue.  0 means no upper altitude limit| horizontal move limit (in meters, AMSL) - if vehicle moves more than this distance from it's location at the moment the command was executed, the command will be aborted and the mission will continue. 0 means no horizontal altitude limit| Empty| Empty| Empty|  */
@@ -498,7 +497,8 @@ typedef enum MAV_CMD
 	MAV_CMD_USER_3=31012, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
 	MAV_CMD_USER_4=31013, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
 	MAV_CMD_USER_5=31014, /* User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item. |User defined| User defined| User defined| User defined| User defined| User defined| User defined|  */
-	MAV_CMD_ENUM_END=31015, /*  | */
+	MAV_CMD_DO_OVERRIDE=40000, /* Altitude and speed override |Override mask| 0 - altitude override enabled, 1 - altitude override type (AGL/MSL), 2 - speed override enabled, 3 - speed override type (throttle/airspeed), 4 - terrain failsafe enable | Altitude override value| Speed override value| Empty| Empty| Empty|  */
+	MAV_CMD_ENUM_END=40001, /*  | */
 } MAV_CMD;
 #endif
 
